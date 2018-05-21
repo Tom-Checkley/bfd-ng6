@@ -1,0 +1,19 @@
+<div class="page">
+  <h1 class="page__heading">Get in touch</h1>
+  <div class="phone">
+    <a href="tel:+" class="phone__num">
+      <h2>{{ info?.mainNumber }}</h2>
+    </a>
+    <a href="tel:+" class="phone__num">
+      <h2>{{ info?.secondaryNumber }}</h2>
+    </a>
+  </div>
+  <div>
+    <p class="address">
+      {{ info?.addressLine1 }}<br /> {{ info?.addressLine2 }}<br /> {{ info?.addressLine3 }}<br /> {{ info?.city }}<br /> {{ info?.postcode }}<br />
+    </p>
+  </div>
+  <div>
+    <a href="mailto:{{ info?.email }}">{{ info?.email }}</a>
+  </div>
+</div>

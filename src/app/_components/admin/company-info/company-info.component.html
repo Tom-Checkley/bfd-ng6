@@ -30,6 +30,10 @@
       <input class="form__input" type="text" name="postcode" id="postcode" [(ngModel)]="postcode" value="{{ info?.postcode }}" />
     </div>
     <div class="form__row">
+      <label for="email" class="form__label">Email</label>
+      <input class="form__input" type="email" name="email" id="email" [(ngModel)]="email" value="{{ info?.postcode }}" />
+    </div>
+    <div class="form__row">
       <div class="form__actions">
         <input type="submit" value="Update" class="button">
       </div>

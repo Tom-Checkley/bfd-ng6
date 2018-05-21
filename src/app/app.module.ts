@@ -15,6 +15,8 @@ import { AdminHomeComponent } from './_components/admin/admin-home/admin-home.co
 import { AdminNavComponent } from './_components/admin/admin-nav/admin-nav.component';
 import { CompanyInfoComponent } from './_components/admin/company-info/company-info.component';
 import { FooterComponent } from './_components/shared/footer/footer.component';
+import { ContactComponent } from './_components/public/contact/contact.component';
+import { NavComponent } from './_components/shared/nav/nav.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { FooterComponent } from './_components/shared/footer/footer.component';
     AdminHomeComponent,
     AdminNavComponent,
     CompanyInfoComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,8 @@ export class CompanyInfoService {
       addressLine2: info.addressLine2,
       addressLine3: info.addressLine3,
       city: info.city,
-      postcode: info.postcode
+      postcode: info.postcode,
+      email: info.email
     });
   }
 }

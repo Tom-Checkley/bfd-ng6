@@ -16,6 +16,7 @@ export class CompanyInfoComponent implements OnInit {
   addressLine3: string;
   city: string;
   postcode: string;
+  email: string;
 
   constructor(private infoService: CompanyInfoService) { }
 
@@ -29,6 +30,7 @@ export class CompanyInfoComponent implements OnInit {
       this.addressLine3 = this.info.addressLine3;
       this.city = this.info.city;
       this.postcode = this.info.postcode;
+      this.email = this.info.email;
     });
   }
 
@@ -41,7 +43,8 @@ export class CompanyInfoComponent implements OnInit {
       addressLine2: this.addressLine2,
       addressLine3: this.addressLine3,
       city: this.city,
-      postcode: this.postcode
+      postcode: this.postcode,
+      email: this.email
     };
     console.log(this.info);
     this.infoService.updateInfo(this.info);

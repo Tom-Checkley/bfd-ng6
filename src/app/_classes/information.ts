@@ -6,5 +6,6 @@ export class Information {
   postcode: string;
   mainNumber: string;
   secondaryNumber: string;
+  email: string;
 }
 
