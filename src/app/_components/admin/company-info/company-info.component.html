@@ -1,0 +1,38 @@
+<div class="page">
+  <app-admin-nav></app-admin-nav>
+  <form (ngSubmit)="updateInfo($event)" class="form form--info">
+    <div class="form__row">
+      <label for="mainNumber" class="form__label">Primary phone number</label>
+      <input class="form__input" type="text" name="mainNumber" id="mainNumber" [(ngModel)]="mainNumber" value="{{ info?.mainNumber }}" />
+    </div>
+    <div class="form__row">
+      <label for="secondaryNumber" class="form__label">Secondary phone number</label>
+      <input class="form__input" type="text" name="secondaryNumber" id="secondaryNumber" [(ngModel)]="secondaryNumber" value="{{ info?.secondaryNumber }}" />
+    </div>
+    <div class="form__row">
+      <label for="addressLine1" class="form__label">Address line 1</label>
+      <input class="form__input" type="text" name="addressLine1" id="addressLine1" [(ngModel)]="addressLine1" value="{{ info?.addressLine1 }}" />
+    </div>
+    <div class="form__row">
+      <label for="addressLine2" class="form__label">Address line 2</label>
+      <input class="form__input" type="text" name="addressLine2" id="addressLine2" [(ngModel)]="addressLine2" value="{{ info?.addressLine2 }}" />
+    </div>
+    <div class="form__row">
+      <label for="addressLine3" class="form__label">Address line 3</label>
+      <input class="form__input" type="text" name="addressLine3" id="addressLine3" [(ngModel)]="addressLine3" value="{{ info?.addressLine3 }}" />
+    </div>
+    <div class="form__row">
+      <label for="city" class="form__label">City</label>
+      <input class="form__input" type="text" name="city" id="city" [(ngModel)]="city" value="{{ info?.city }}" />
+    </div>
+    <div class="form__row">
+      <label for="postcode" class="form__label">Postcode</label>
+      <input class="form__input" type="text" name="postcode" id="postcode" [(ngModel)]="postcode" value="{{ info?.postcode }}" />
+    </div>
+    <div class="form__row">
+      <div class="form__actions">
+        <input type="submit" value="Update" class="button">
+      </div>
+    </div>
+  </form>
+</div>

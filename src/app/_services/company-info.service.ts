@@ -18,4 +18,16 @@ export class CompanyInfoService {
   getInfo(): AngularFireObject<any> {
     return this.infoRef;
   }
+
+  updateInfo(info) {
+    this.infoRef.set({
+      mainNumber: info.mainNumber,
+      secondaryNumber: info.secondaryNumber,
+      addressLine1: info.addressLine1,
+      addressLine2: info.addressLine2,
+      addressLine3: info.addressLine3,
+      city: info.city,
+      postcode: info.postcode
+    });
+  }
 }
