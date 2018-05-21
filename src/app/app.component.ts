@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { database } from 'firebase';
 
 @Component({
   selector: 'app-root',
