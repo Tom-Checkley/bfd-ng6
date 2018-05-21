@@ -4,16 +4,16 @@
     <a href="tel:+" class="phone__num">
       <h2>{{ info?.mainNumber }}</h2>
     </a>
-    <a href="tel:+" class="phone__num">
+    <a href="tel:+" class="phone__num" *ngIf="info?.secondaryNumber">
       <h2>{{ info?.secondaryNumber }}</h2>
     </a>
   </div>
   <div>
     <p class="address">
-      {{ info?.addressLine1 }}<br /> {{ info?.addressLine2 }}<br /> {{ info?.addressLine3 }}<br /> {{ info?.city }}<br /> {{ info?.postcode }}<br />
+      {{ info?.addressLine1 }}<br />{{ info?.addressLine2 }}<br /><span *ngIf="info?.addressLine3">{{ info?.addressLine3 }}<br /></span>{{ info?.city }}<br />{{ info?.postcode }}<br />
     </p>
   </div>
-  <div>
+  <div *ngIf="info?.email">
     <a href="mailto:{{ info?.email }}">{{ info?.email }}</a>
   </div>
 </div>

@@ -5,7 +5,7 @@ export class Information {
   city: string;
   postcode: string;
   mainNumber: string;
-  secondaryNumber: string;
-  email: string;
+  secondaryNumber?: string;
+  email?: string;
 }
 
