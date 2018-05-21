@@ -1,0 +1,17 @@
+<ul class="list list--testimonials">
+  <li class="list__item" *ngFor="let testimonial of testimonials">
+    <article class="testimonial">
+      <h1 class="testimonial__author">{{ testimonial?.name }}</h1>
+      <h2 class="testimoial__location">{{ testimonial.location }}</h2>
+      <app-display-stars></app-display-stars>
+      <p class="testimonial__body">
+        {{ testimonial?.body }}
+      </p>
+      <div class="testimonial__meta">
+        <p>
+          <small>Posted: {{ testimonial?.date | date }}</small>
+        </p>
+      </div>
+    </article>
+  </li>
+</ul>

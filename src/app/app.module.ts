@@ -17,6 +17,9 @@ import { CompanyInfoComponent } from './_components/admin/company-info/company-i
 import { FooterComponent } from './_components/shared/footer/footer.component';
 import { ContactComponent } from './_components/public/contact/contact.component';
 import { NavComponent } from './_components/shared/nav/nav.component';
+import { DisplayTestimonialsComponent } from './_components/public/testimonials/display-testimonials/display-testimonials.component';
+import { TestimonialsComponent } from './_components/public/testimonials/testimonials/testimonials.component';
+import { DisplayStarsComponent } from './_components/shared/display-stars/display-stars.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { NavComponent } from './_components/shared/nav/nav.component';
     CompanyInfoComponent,
     FooterComponent,
     ContactComponent,
-    NavComponent
+    NavComponent,
+    DisplayTestimonialsComponent,
+    TestimonialsComponent,
+    DisplayStarsComponent
   ],
   imports: [
     BrowserModule,
