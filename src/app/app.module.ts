@@ -20,6 +20,8 @@ import { NavComponent } from './_components/shared/nav/nav.component';
 import { DisplayTestimonialsComponent } from './_components/public/testimonials/display-testimonials/display-testimonials.component';
 import { TestimonialsComponent } from './_components/public/testimonials/testimonials/testimonials.component';
 import { DisplayStarsComponent } from './_components/shared/display-stars/display-stars.component';
+import { DisplayStarsDirective } from './_directives/display-stars.directive';
+import { LeaveTestimonialComponent } from './_components/leave-testimonial/leave-testimonial.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { DisplayStarsComponent } from './_components/shared/display-stars/displa
     NavComponent,
     DisplayTestimonialsComponent,
     TestimonialsComponent,
-    DisplayStarsComponent
+    DisplayStarsComponent,
+    DisplayStarsDirective,
+    LeaveTestimonialComponent
   ],
   imports: [
     BrowserModule,

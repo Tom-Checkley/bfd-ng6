@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-display-stars',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayStarsComponent implements OnInit {
 
-  constructor() { }
+  @Input() stars;
+  @Input() outOf;
+
+  // stars = stars;
+
+  percentage = (this.stars / this.outOf * 100) + '%';
+
+  // percentage: string;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
