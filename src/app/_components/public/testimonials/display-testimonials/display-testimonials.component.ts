@@ -16,7 +16,6 @@ export class DisplayTestimonialsComponent implements OnInit {
   ngOnInit() {
     this.testimonialService
       .getVerified()
-      .valueChanges()
       .subscribe(testimonials => {
         this.testimonials = testimonials;
       });
