@@ -5,25 +5,14 @@
       <h2 class="testimoial__location">{{ testimonial?.location }}</h2>
       <div>
         <p class="sr">{{testimonial.stars}} stars out of {{testimonial.outOf}}</p>
-        <!-- <app-display-stars [stars]="testimonial?.stars" [outOf]="testimonial?.outOf"></app-display-stars> -->
-        <div class="star-rating">
-          <div class="star-rating__wrapper">
-            <!-- <div class="star-rating__bg" [appDisplayStars]="setPercentageWidth(testimonial?.stars, testimonial?.outOf)"></div> -->
-            <!-- {{percentage}} -->
-            <img src="assets/img/star.svg" alt="" class="star-rating__star">
-            <img src="assets/img/star.svg" alt="" class="star-rating__star">
-            <img src="assets/img/star.svg" alt="" class="star-rating__star">
-            <img src="assets/img/star.svg" alt="" class="star-rating__star">
-            <img src="assets/img/star.svg" alt="" class="star-rating__star">
-          </div>
-        </div>
+        <app-display-stars appDisplayStars [stars]="testimonial?.stars" [outOf]="testimonial?.outOf"></app-display-stars>
       </div>
       <p class="testimonial__body">
         {{ testimonial?.body }}
       </p>
       <div class="testimonial__meta">
         <p>
-          <small>Posted: {{ testimonial?.date | date }}</small>
+          <small>Posted: {{ testimonial?.date | date: 'dd LLLL yyyy' }}</small>
         </p>
       </div>
     </article>
