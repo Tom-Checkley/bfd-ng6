@@ -1,0 +1,30 @@
+// Services
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$SERVICES-Bgs:		'clearance', 'cctv', 'repairs', 'installation', 'tanker';
+
+// Main
+///////////////////////////
+
+
+// Elements
+///////////////////////////
+
+.services__service {
+	@each $service in $SERVICES-Bgs {
+		&--#{$service} {
+			@include bg-img('#{$service}.jpg');
+		}
+	}
+}
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

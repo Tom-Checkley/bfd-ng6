@@ -1,0 +1,47 @@
+// BROWSER UPDATE
+// 
+// Overwrite styles of browserupdate.org
+// http://browserupdate.org/customize.html
+/////////////////////////////////////////////////
+
+// Variables
+///////////////////////////
+$BU-BgColor:					$COLOR-Primary;
+$BU-Color:						$COLOR-White;
+$BU-PaddingY:					$Type-LineHeight / 4;
+$BU-PaddingX:					$Type-LineHeight;
+
+// Main
+///////////////////////////
+
+body .buorg {
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid $COLOR-Secondary;
+	background-color: $BU-BgColor;
+	color: $BU-Color;
+	font-weight: $Body-FontWeight;
+	font-size: $FontSize;
+	@include padding($BU-PaddingY, $BU-PaddingX);
+	.buorg-buttons {
+		@include padding-y($BU-PaddingY, 0);
+		a {
+			@include padding(2, 8);
+			font-weight: $Body-FontWeight;
+			box-shadow: none;
+			border-radius: $BORDER-Radius;
+		}
+	}
+}
+
+
+// Elements
+///////////////////////////
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

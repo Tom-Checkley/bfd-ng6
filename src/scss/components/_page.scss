@@ -1,0 +1,31 @@
+// PAGE
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$Page-MinHeight:		100vh;
+$Page-Padding:			$Type-LineHeight;
+
+
+// Main
+///////////////////////////
+
+.page {
+	height: $Page-MinHeight;
+	// display: flex;
+}
+
+// Elements
+///////////////////////////
+
+.page__content {
+	@include padding($Page-Padding);
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

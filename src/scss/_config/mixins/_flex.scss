@@ -1,0 +1,15 @@
+@mixin flex($direction: row, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  @if $justify {
+    @if $justify==around or between {
+      justify-content: space-#{$justify};
+    }
+    @else {
+      justify-content: $justify;
+    }
+  }
+  @if $align {
+    align-items: $align;
+  }
+}

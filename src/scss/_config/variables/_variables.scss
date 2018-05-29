@@ -1,0 +1,71 @@
+// TYPOGRAPHY
+//////////////////////////////////////////////
+
+// @import url('https://fonts.googleapis.com/css?family=Raleway:700|Roboto:300,400,700');
+
+$Font-Headings:		'ralewaybold';
+$Font-Main:				'robotothin';
+$Font-MainBold:		'robotobold';
+
+$FontSize-XXXS:		8;
+$FontSize-XXS:		10;
+$FontSize-XS:			12;
+$FontSize-S:			14;
+$FontSize:				16;
+$FontSize-L: 			18;
+$FontSize-XL: 		20;
+$FontSize-XXL: 		24;
+$FontSize-XXXL:		36;
+
+$LineHeight:			1.5;
+
+$Base-FontSize:		$FontSize-L;
+
+$Type-LineHeight:	$Base-FontSize * $LineHeight;
+
+$FontFamily-Sans:	'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+$FontFamily-Head:	$Font-Headings, $FontFamily-Sans;
+$FontFamily-Main:	$Font-Main, $FontFamily-Sans;
+
+
+$FontWeight-Bold: 700;
+$FontWeight-Reg: 	400;
+$FontWeight-Thin: 300;
+
+
+
+// Breakpoints
+///////////////////////////////////////
+
+$BP-Smallest:		340px;
+$BP-Small:			480px;
+$BP-Med:				670px;
+$BP-Large:			1024px;
+$BP-Larger:			1400px;
+$BP-Largest:		1700px;
+
+
+// Images
+///////////////////////////////////////
+
+$imgPath:				'./assets/img/';
+
+
+
+// Colors
+///////////////////////////////////////
+
+$COLOR-Primary:			#242533;
+$COLOR-Secondary:		#ff9800;
+$COLOR-White:				#ffffff;
+
+$Opacity:						0.8;
+
+$COLOR-BG-Opaque:		rgba($COLOR-Primary, $Opacity);
+
+// Borders
+///////////////////////////////////////
+
+$BORDER:					$COLOR-Primary 2px solid;
+$BORDER-Radius:		em($Base-FontSize /  6);

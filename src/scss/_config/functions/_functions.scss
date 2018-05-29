@@ -1,0 +1,49 @@
+// FUNCTIONS
+///////////////////////////
+
+// TODO - SPLIT OUT IF THIS STARTS BECOMING UNWEILDLY
+
+// STRIP UNIT
+@function strip-unit($value, $unit) {
+	@if(unitless($value)) {
+		@return $value;
+	}
+	@else if($unit == 'all') {
+		@return $value / ($value * 0 + 1);
+	}
+	@else if(unit($value) == $unit) {
+		@return $value / 1#{$unit};
+	}
+	@else {
+		@return $value;
+	}
+}
+
+// PIXEL OR %
+@function pxOrPercent($value) {
+	@if unit($value) == '%' {
+		@return $value;
+	}
+	@else {
+		@return $value / ($value * 0 + 1);
+	}
+}
+
+// TO EM
+@function em($val, $context: $Base-FontSize) {
+	@if is-numeber($val) and $val != 0 {
+		@if(unitless($val)) {
+			$val: $val * 1px;
+		}
+		@if(unitless($context)) {
+			$context: $context * 1px;
+		}
+		@return $val / $context * 1em;
+	}
+	@else if ($val == 0 or $val == 'auto') {
+		@return $val;
+	}
+	@else {
+		@error 'Value `#{$val}` not a number auto or 0 while converting to em';
+	}
+}

@@ -1,0 +1,22 @@
+@mixin media($bp, $orientation: null, $minMax: null) {
+	@if $minMax and $orientation {
+		@media screen and (#{$minMax}-width: $bp) and (orientation: $orientation) {
+			@content;
+		}
+	}
+	@else if $minMax and not $orientation {
+		@media screen and (#{$minMax}-width: $bp) {
+			@content;
+		}
+	}
+	@else if $orientation and not $minMax {
+		@media screen and (min-width: $bp) and (orientation: $orientation) {
+			@content;
+		}
+	}
+	@else {
+		@media screen and (min-width: $bp) {
+			@content;
+		}
+	}
+}

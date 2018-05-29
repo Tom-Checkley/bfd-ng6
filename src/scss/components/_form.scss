@@ -1,0 +1,55 @@
+// FORMS
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$FORM-PaddingY:				$Type-LineHeight;
+$FORM-MarginX-Mob:		10%;
+$FORM-MarginX-Tab:		25%;
+$FORM-MarginX-Full:		33.33%;
+$FORM-Spacing:				$Type-LineHeight / 2;
+
+
+// Main
+///////////////////////////
+
+.form {
+	@include padding-y($FORM-PaddingY);
+	@include margin-x($FORM-MarginX-Mob);
+}
+
+// Elements
+///////////////////////////
+
+.form__row {
+	@include padding-y($FORM-Spacing);
+}
+
+.form__input {
+	@include padding($FORM-Spacing / 2);
+	width: 100%;
+}
+
+.form__label {
+	@include visually-hidden;
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+
+@include media($BP-Med) {
+	.form {
+		@include margin-x($FORM-MarginX-Tab);
+	}
+}
+
+@include media($BP-Large) {
+	.form {
+		@include margin-x($FORM-MarginX-Full);
+	}
+}

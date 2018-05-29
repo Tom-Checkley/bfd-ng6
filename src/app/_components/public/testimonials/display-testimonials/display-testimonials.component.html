@@ -5,7 +5,7 @@
       <h2 class="testimoial__location">{{ testimonial?.location }}</h2>
       <div>
         <p class="sr">{{testimonial.stars}} stars out of {{testimonial.outOf}}</p>
-        <app-display-stars appDisplayStars [stars]="testimonial?.stars" [outOf]="testimonial?.outOf"></app-display-stars>
+        <app-display-stars [stars]="testimonial.stars" [outOf]="testimonial.outOf"></app-display-stars>
       </div>
       <p class="testimonial__body">
         {{ testimonial?.body }}

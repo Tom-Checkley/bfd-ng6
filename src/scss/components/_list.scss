@@ -1,0 +1,52 @@
+// LISTS
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+
+// Main
+///////////////////////////
+
+.list {}
+
+// Variants
+///////////////////////////
+
+.list--nav {
+	list-style: none;
+}
+
+.list--horizontal {
+	@include flex(column, space-around, center);
+	.list__item {
+		display: inline-block;
+		// float: left;
+	}
+}
+
+.list--services {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	.list__item {
+		height: 50%;
+		width:33.33%;
+		float: left;
+	}
+}
+
+
+
+// Media Queries
+///////////////////////////
+
+@include media ($BP-Med) {
+	.list--horizontal {
+		@include flex(row, space-around, center);
+		.list__item {
+			display: inline-block;
+		}
+	}
+}

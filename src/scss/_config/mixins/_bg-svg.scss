@@ -1,0 +1,13 @@
+// @mixin svg-bg($bgColor, $points) {
+// 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' viewBox='0, 0, 100, 100'%3E%3Cpolygon points='#{$points}' style='fill: #{$bgColor}'%3E%3C/polygon%3E%3C/svg%3E");
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	background-color: transparent;
+// 	content: '';
+// 	position: absolute;
+// 	height: 100%;
+// 	width: 100%;
+// 	z-index: 10;
+// 	top: 0;
+// 	left: 0;
+// }

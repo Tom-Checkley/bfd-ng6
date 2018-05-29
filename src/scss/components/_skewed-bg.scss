@@ -1,0 +1,58 @@
+// TEMPLATE
+///////////////////////////
+
+// Variables
+///////////////////////////
+$SKEWED-Clip-Wide:			polygon(0% 0%, 90% 0, 80% 100%, 0% 100%);
+$SKEWED-Clip-Narrow:		polygon(0% 0%, 60% 0%, 50% 100%, 0% 100%);
+$SKEWED-BgColor:				$COLOR-BG-Opaque;
+
+
+// Main
+///////////////////////////
+
+.skewed-bg {
+	height: 100%;
+	width: 100%;
+
+	// include bg image skewed overlay for browsers not supporting clip path
+	@include bg-img('bg-overlay.png');
+	
+	@supports (clip-path: $SKEWED-Clip-Wide) {
+		background-image: none;
+		@include clip-path($SKEWED-Clip-Wide);
+		background-color: $SKEWED-BgColor;
+	}
+}
+
+// Elements
+///////////////////////////
+
+.skewed-bg__content {
+	width: 60%;
+	color: $COLOR-White;
+	@supports (clip-path: $SKEWED-Clip-Wide) {
+		width: 80%;	
+	}
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+@include media($BP-Large) {
+	.skewed-bg {
+		@supports (clip-path: $SKEWED-Clip-Wide) {
+			@include clip-path($SKEWED-Clip-Narrow);
+		}
+	}
+	.skewed-bg__content {
+		width: 50%;
+	}
+}
+
+
+
+

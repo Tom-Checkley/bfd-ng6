@@ -1,0 +1,146 @@
+// PADDING MIXINS
+
+// PADDING SHORTHAND
+/////////////////////////////////////////
+
+@mixin padding($t, $r: null, $b: null, $l: null) {
+	@if not ($r) {
+		$t: pxOrPercent($t);
+		@if(unitless($t)) {
+			padding: #{$t}px;
+			padding: em($t);
+		}
+		@else {
+			padding: $t;
+		}
+	} 
+
+	@if($r and not $b) {
+		$t: pxOrPercent($t);
+		$r: pxOrPercent($r);
+		@if(unitless($t) and unitless($r)) {
+			padding: #{$t}px #{$r}px;
+			padding: em($t) em($r);
+		}
+		@else {
+			@if(unitless($t)) {
+				$t: em($t);
+			}
+			@if(unitless($r)) {
+				$r: em($r);
+			}
+			padding: $t $r;
+		}
+	}
+
+	@if($r and $b and not $l) {
+		$t: pxOrPercent($t);
+		$r: pxOrPercent($r);
+		$b: pxOrPercent($b);
+		@if(unitless($t) and unitless($r) and unitless($b)) {
+			padding: #{$t}px #{$r}px #{$b}px;
+			padding: em($t) em($r) em($b);
+		}
+		@else {
+			@if(unitless($t)) {
+				$t: em($t);
+			}
+			@if(unitless($r)) {
+				$r: em($r);
+			}
+			@if(unitless($b)) {
+				$b: em($b);
+			}
+			padding: $t $r $b;
+		}
+	}
+
+	@if($r and $b and $l) {
+		$t: pxOrPercent($t);
+		$r: pxOrPercent($r);
+		$b: pxOrPercent($b);
+		$l: pxOrPercent($l);
+		@if(unitless($t) and unitless($r) and unitless($b) and unitless($l)) {
+			padding: #{$t}px #{$r}px #{$b}px #{$l}px;
+			padding: em($t) em($r) em($b) em($l);
+		}
+		@else {
+			@if(unitless($t)) {
+				$t: em($t);
+			}
+			@if(unitless($r)) {
+				$r: em($r);
+			}
+			@if(unitless($b)) {
+				$b: em($b);
+			}
+			@if(unitless($l)) {
+				$l: em($l);
+			}
+			padding: $t $r $b $l;
+		}
+	}
+}
+
+// PADDING-X
+/////////////////////////////////////////
+
+@mixin padding-x($l, $r: null) {
+	@if(not $r) {
+		$l: pxOrPercent($l);
+		@if(unitless($l)) {
+			padding-left: #{$l}px;
+			padding-left: em($l);
+			padding-right: #{$l}px;
+			padding-right: em($l);
+		}
+		@else {
+			padding-left: $l;
+			padding-right: $l;
+		}
+	}
+	@if($l and $r) {
+		$l: pxOrPercent($l);
+		$r: pxOrPercent($r);
+		@if(unitless($l)) {
+			$l: em($l);
+		}
+		@if(unitless($r)) {
+			$r: em($r);
+		}
+		padding-left: $l;
+		padding-right: $r;
+	}
+}
+
+
+// PADDING-Y
+/////////////////////////////////////////
+
+@mixin padding-y($t, $b: null) {
+	@if(not $b) {
+		$t: pxOrPercent($t);
+		@if(unitless($t)) {
+			padding-top: #{$t}px;
+			padding-top: em($t);
+			padding-bottom: #{$t}px;
+			padding-bottom: em($t);
+		}
+		@else {
+			padding-top: $t;
+			padding-bottom: $t;
+		}
+	}
+	@if($t and $b) {
+		$t: pxOrPercent($t);
+		$b: pxOrPercent($b);
+		@if(unitless($t)) {
+			$t: em($t);
+		}
+		@if(unitless($b)) {
+			$b: em($b);
+		}
+		padding-top: $t;
+		padding-bottom: $b;
+	}
+}

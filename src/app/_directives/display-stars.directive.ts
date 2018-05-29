@@ -3,7 +3,7 @@ import { Directive, Input, ElementRef, OnChanges, SimpleChanges } from '@angular
 @Directive({
   selector: '[appDisplayStars]'
 })
-export class DisplayStarsDirective {
+export class DisplayStarsDirective implements OnChanges {
 
   @Input() stars: any;
   @Input() outOf: any;

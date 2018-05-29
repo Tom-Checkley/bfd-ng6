@@ -1,0 +1,7 @@
+// HELPER CLASSES
+// 
+// Brought in high so can be over ruled if necessary
+
+.visually-hidden {
+	@include visually-hidden;
+}

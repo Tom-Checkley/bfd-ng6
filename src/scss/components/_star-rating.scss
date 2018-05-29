@@ -1,0 +1,41 @@
+// STAR RATING
+///////////////////////////
+
+// Variables
+///////////////////////////
+$STAR-Bg:			$COLOR-Secondary;
+
+
+// Main
+///////////////////////////
+.star-rating {
+	width: 254px;
+	border: $BORDER;
+	border-color: $COLOR-Secondary;
+	border-radius: $BORDER-Radius;
+}
+
+// Elements
+///////////////////////////
+.star-rating__wrapper {
+	@include flex($justify: flex-start, $align: center);
+	position: relative;
+}
+
+.star-rating__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: $STAR-Bg;
+}
+.star-rating__star {
+	z-index: 10;
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

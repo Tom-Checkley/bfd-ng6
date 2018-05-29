@@ -1,0 +1,8 @@
+// FONT-SIZE
+
+@mixin font-size($size, $lh: $LineHeight) {
+	font-size: #{$size}px;
+	font-size: em($size);
+	line-height: #{$size * $lh}px;
+	line-height: em($size * $lh);
+}
