@@ -12,11 +12,19 @@ export class TestimonialService {
   private verifiedPath = '/verifiedTestimonials';
   verifiedRef: Observable<any[]>;
 
+  private totalStarsPath = '/totalStars';
+  totalRef: Observable<any[]>;
+
   constructor(private db: AngularFireDatabase) {
     this.verifiedRef = db.list(this.verifiedPath).valueChanges();
+    this.totalRef = db.list(this.totalStarsPath).valueChanges();
   }
 
   getVerified() {
     return this.verifiedRef;
+  }
+
+  getTotalStars() {
+    return this.totalRef;
   }
 }

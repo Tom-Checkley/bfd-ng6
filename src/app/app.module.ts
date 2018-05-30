@@ -21,8 +21,7 @@ import { DisplayTestimonialsComponent } from './_components/public/testimonials/
 import { TestimonialsComponent } from './_components/public/testimonials/testimonials/testimonials.component';
 import { DisplayStarsComponent } from './_components/shared/display-stars/display-stars.component';
 import { DisplayStarsDirective } from './_directives/display-stars.directive';
-import { LeaveTestimonialComponent } from './_components/leave-testimonial/leave-testimonial.component';
-
+import { LeaveTestimonialComponent } from './_components/public/testimonials/leave-testimonial/leave-testimonial.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,7 @@ import { LeaveTestimonialComponent } from './_components/leave-testimonial/leave
     TestimonialsComponent,
     DisplayStarsComponent,
     DisplayStarsDirective,
-    LeaveTestimonialComponent
+    LeaveTestimonialComponent,
   ],
   imports: [
     BrowserModule,

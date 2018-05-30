@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyInfoService } from '../../../_services/company-info.service';
 import { TestimonialService } from '../../../_services/testimonial.service';
+import { Testimonial } from '../../../_classes/testimonial';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import { TestimonialService } from '../../../_services/testimonial.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  testimonials: Testimonial[];
   info: any;
   stars: any;
   outOf: any;
@@ -18,11 +20,13 @@ export class HomeComponent implements OnInit {
     this.infoService.getInfo().valueChanges().subscribe(info => {
       this.info = info;
     });
-    this.testimonialService.getVerified().subscribe(testimonials => {
-      testimonials.forEach(testimonial => {
-        const s = parseInt(testimonial.stars, 10);
-        this.stars += s;
-      });
+    this.getStars();
+  }
+
+  getStars() {
+    this.testimonialService.getTotalStars().subscribe(totalStars => {
+      this.outOf = totalStars[0];
+      this.stars = totalStars[1];
     });
   }
 

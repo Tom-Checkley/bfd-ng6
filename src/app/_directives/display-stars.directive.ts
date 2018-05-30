@@ -15,8 +15,8 @@ export class DisplayStarsDirective implements OnChanges {
   }
 
   private setPercentageWidth() {
-    const stars = parseInt(this.stars, 10);
-    const outOf = parseInt(this.outOf, 10);
+    const stars = parseFloat(this.stars);
+    const outOf = parseFloat(this.outOf);
     const percentage = stars / outOf * 100 + '%';
     this.el.nativeElement.style.width = percentage;
   }
