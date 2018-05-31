@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Testimonial } from '../../../../_classes/testimonial';
+import { TestimonialService } from '../../../../_services/testimonial.service';
 
 @Component({
   selector: 'app-leave-testimonial',
@@ -17,11 +18,23 @@ export class LeaveTestimonialComponent implements OnInit {
   id: string;
   submitted = false;
 
-  constructor() { }
+  constructor(private testionialService: TestimonialService) { }
 
   ngOnInit() {
   }
 
-  submitTestimonial($event) {}
+  submitTestimonial(e) {
+    e.preventDefault();
+    this.date = Date.now();
+    this.testimonial = {
+      name: this.name,
+      location: this.location,
+      stars: this.stars,
+      outOf: this.outOf,
+      body: this.body,
+      date: this.date,
+    };
+    this.testionialService.submitTestimonial(this.testimonial);
+  }
 
 }
