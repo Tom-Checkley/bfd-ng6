@@ -13,6 +13,7 @@ $ARTICLE-Padding:					$Type-LineHeight;
 ///////////////////////////
 .article {
 	@include padding(0, $ARTICLE-Padding);
+	@include cf;
 }
 
 
@@ -21,6 +22,12 @@ $ARTICLE-Padding:					$Type-LineHeight;
 .article__img {
 	width: $ARTICLE-ImgWidth-Mob;
 }
+
+.article__foot {
+	@include padding($ARTICLE-Padding);
+}
+	
+
 
 // Variants
 ///////////////////////////

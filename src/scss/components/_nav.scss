@@ -35,6 +35,10 @@ $NAV-Font:		$Font-Headings;
 	}
 }
 
+.nav--services {
+	@include padding-x($Type-LineHeight);
+}
+
 // Media Queries
 ///////////////////////////
 @include media($BP-Med) {
@@ -53,7 +57,6 @@ $NAV-Font:		$Font-Headings;
 	}
 	
 	.nav--services {
-		@include padding-x($Type-LineHeight);
 		.nav__links {
 			justify-content: space-between;
 		}
