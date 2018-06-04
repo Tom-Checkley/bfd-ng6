@@ -1,0 +1,44 @@
+// ARTICLE
+///////////////////////////
+
+// Variables
+///////////////////////////
+$ARTICLE-ImgWidth-Mob:		percentage(1 / 1);
+$ARTICLE-ImgWidth-Tab:		percentage(1 / 2);
+$ARTICLE-ImgWidth-Full:		percentage(1 / 3);
+$ARTICLE-Padding:					$Type-LineHeight;
+
+
+// Main
+///////////////////////////
+.article {
+	@include padding(0, $ARTICLE-Padding);
+}
+
+
+// Elements
+///////////////////////////
+.article__img {
+	width: $ARTICLE-ImgWidth-Mob;
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+@include media($BP-Med) {
+	.article__img {
+		width: $ARTICLE-ImgWidth-Tab;
+		float: left;
+		@include padding(0, $ARTICLE-Padding, $ARTICLE-Padding, 0);
+	}
+
+}
+
+@include media($BP-Large) {
+	.article__img {
+		width: $ARTICLE-ImgWidth-Full;
+	}
+}
