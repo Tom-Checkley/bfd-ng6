@@ -1,9 +1,12 @@
-<nav class="nav nav--main">
-  <ul class="list list--h nav__links">
-    <li class="list__item">
+<nav>
+  <ul class="list list--nav nav__links">
+      <li class="list__item nav__item">
+        <a class="nav__link" [routerLink]="['/services']">Services</a>
+      </li>
+    <li class="list__item nav__item">
       <a class="nav__link" [routerLink]="['/testimonials']">Testimonials</a>
     </li>
-    <li class="list__item">
+    <li class="list__item nav__item">
       <a class="nav__link" [routerLink]="['/contact']">Contact</a>
     </li>
   </ul>

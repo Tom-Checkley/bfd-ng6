@@ -22,6 +22,13 @@ import { TestimonialsComponent } from './_components/public/testimonials/testimo
 import { DisplayStarsComponent } from './_components/shared/display-stars/display-stars.component';
 import { DisplayStarsDirective } from './_directives/display-stars.directive';
 import { LeaveTestimonialComponent } from './_components/public/testimonials/leave-testimonial/leave-testimonial.component';
+import { VerifyTestimonialsComponent } from './_components/admin/verify-testimonials/verify-testimonials.component';
+import { ServicesComponent } from './_components/public/services/services/services.component';
+import { CctvComponent } from './_components/public/services/cctv/cctv.component';
+import { InstallationComponent } from './_components/public/services/installation/installation.component';
+import { RepairsComponent } from './_components/public/services/repairs/repairs.component';
+import { ClearanceComponent } from './_components/public/services/clearance/clearance.component';
+import { TankerComponent } from './_components/public/services/tanker/tanker.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +46,13 @@ import { LeaveTestimonialComponent } from './_components/public/testimonials/lea
     DisplayStarsComponent,
     DisplayStarsDirective,
     LeaveTestimonialComponent,
+    VerifyTestimonialsComponent,
+    ServicesComponent,
+    CctvComponent,
+    InstallationComponent,
+    RepairsComponent,
+    ClearanceComponent,
+    TankerComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: $direction;
   @if $justify {
-    @if $justify==around or between {
-      justify-content: space-#{$justify};
+    @if $justify=='around' or 'between' {
+      justify-content: #{$justify};
     }
     @else {
       justify-content: $justify;

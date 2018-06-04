@@ -1,0 +1,27 @@
+<div>
+  <h1>Verify testimonials</h1>
+  <ul class="list list--testimonials">
+    <li class="list__item" *ngFor="let t of testimonials">
+      <article class="testimonial">
+        <h1 class="testimonial__author">{{ t.name }}</h1>
+        <h2 class="testimoial__location">{{ t.location }}</h2>
+        <div>
+          <p class="sr">{{t.stars}} stars out of {{t.outOf}}</p>
+          <app-display-stars [stars]="t.stars" [outOf]="t.outOf"></app-display-stars>
+        </div>
+        <p class="testimonial__body">
+          {{ t.body }}
+        </p>
+        <div class="testimonial__meta">
+          <p>
+            <small>Posted: {{ t.date | date: 'dd LLLL yyyy' }}</small>
+          </p>
+        </div>
+        <div class="article__actions">
+          <button class="button button--danger" (click)="deleteTestimonial(t.id)">Delete Testimonial</button>
+          <button class="button button--success" (click)="verifyTestimonial(t)">Save Testimonial</button>
+        </div>
+      </article>
+    </li>
+  </ul>
+</div>

@@ -26,6 +26,7 @@ export class LeaveTestimonialComponent implements OnInit {
   submitTestimonial(e) {
     e.preventDefault();
     this.date = Date.now();
+    if (!this.body) { this.body = ''; }
     this.testimonial = {
       name: this.name,
       location: this.location,
