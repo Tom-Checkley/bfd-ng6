@@ -30,6 +30,7 @@ import { RepairsComponent } from './_components/public/services/repairs/repairs.
 import { ClearanceComponent } from './_components/public/services/clearance/clearance.component';
 import { TankerComponent } from './_components/public/services/tanker/tanker.component';
 import { ServiceNavComponent } from './_components/public/services/service-nav/service-nav.component';
+import { PhoneNumbersComponent } from './_components/shared/phone-numbers/phone-numbers.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ServiceNavComponent } from './_components/public/services/service-nav/s
     ClearanceComponent,
     TankerComponent,
     ServiceNavComponent,
+    PhoneNumbersComponent,
   ],
   imports: [
     BrowserModule,
