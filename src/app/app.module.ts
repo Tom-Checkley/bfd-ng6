@@ -29,6 +29,7 @@ import { InstallationComponent } from './_components/public/services/installatio
 import { RepairsComponent } from './_components/public/services/repairs/repairs.component';
 import { ClearanceComponent } from './_components/public/services/clearance/clearance.component';
 import { TankerComponent } from './_components/public/services/tanker/tanker.component';
+import { ServiceNavComponent } from './_components/public/services/service-nav/service-nav.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { TankerComponent } from './_components/public/services/tanker/tanker.com
     RepairsComponent,
     ClearanceComponent,
     TankerComponent,
+    ServiceNavComponent,
   ],
   imports: [
     BrowserModule,
