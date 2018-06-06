@@ -9,6 +9,7 @@ import { Testimonial } from '../../../_classes/testimonial';
 })
 export class VerifyTestimonialsComponent implements OnInit {
   testimonials;
+  totalStars;
 
   constructor(private testimonialService: TestimonialService) { }
 
@@ -16,6 +17,11 @@ export class VerifyTestimonialsComponent implements OnInit {
     this.testimonialService.getUnverified()
       .subscribe(t => {
         this.testimonials = t;
+      });
+
+    this.testimonialService.getTotalStars()
+      .subscribe(tS => {
+        this.totalStars = tS;
       });
   }
 
@@ -25,6 +31,10 @@ export class VerifyTestimonialsComponent implements OnInit {
 
   verifyTestimonial(t: Testimonial) {
     this.testimonialService.verifyTestimonial(t);
+    const outOf = Number(this.totalStars[0]) + Number(t.outOf);
+    const stars = Number(t.stars) + Number(this.totalStars[1]);
+    this.testimonialService.setTotalStars(stars, outOf);
+    this.testimonialService.deleteTestimonial(t.id);
   }
 
 }

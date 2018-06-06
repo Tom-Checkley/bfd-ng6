@@ -11,7 +11,8 @@ export class TestimonialService {
   testimonial: Testimonial;
 
   private verifiedPath = '/verifiedTestimonials';
-  verifiedRef: Observable<any[]>;
+  verifiedRef: AngularFireList<Testimonial>;
+  verifiedsToGet: Observable<any[]>;
 
   private totalStarsPath = '/totalStars';
   totalRef: Observable<any[]>;
@@ -22,7 +23,7 @@ export class TestimonialService {
   unverifiedsToGet: Observable<any[]>;
 
   constructor(private db: AngularFireDatabase) {
-    this.verifiedRef = db.list(this.verifiedPath).valueChanges();
+    this.verifiedsToGet = db.list(this.verifiedPath).valueChanges();
 
     this.totalRef = db.list(this.totalStarsPath).valueChanges();
 
@@ -32,7 +33,7 @@ export class TestimonialService {
   }
 
   getVerified() {
-    return this.verifiedRef;
+    return this.verifiedsToGet;
   }
 
   getTotalStars() {
@@ -41,6 +42,14 @@ export class TestimonialService {
 
   getUnverified() {
     return this.unverifiedsToGet;
+  }
+
+  setTotalStars(stars, outOf) {
+    const dbRef = this.db.object(this.totalStarsPath);
+    dbRef.set({
+      outOf: outOf,
+      stars: stars
+    });
   }
 
   submitTestimonial(t: Testimonial) {
@@ -62,21 +71,16 @@ export class TestimonialService {
   }
 
   verifyTestimonial(t) {
-    // const verifiedRef = this.db.list(this.verifiedPath);
-    // const newVerified = verifiedRef.push({
-    //   name: t.name,
-    //   location: t.location,
-    //   stars: t.stars,
-    //   outOf: t.outOf,
-    //   body: t.body,
-    //   date: t.date
-    // });
-    // newVerified.update({id: newVerified.key});
-    let tStars;
-    this.totalStars.subscribe(tS => {
-      tStars = tS;
+    this.verifiedRef = this.db.list(this.verifiedPath);
+    const newT = this.verifiedRef.push({
+      name: t.name,
+      location: t.location,
+      stars: t.stars,
+      outOf: t.outOf,
+      body: t.body,
+      date: t.date,
     });
-    console.log(tStars);
+    newT.update({id: newT.key});
   }
 
 }
