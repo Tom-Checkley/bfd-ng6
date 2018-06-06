@@ -36,6 +36,7 @@ export class LeaveTestimonialComponent implements OnInit {
       date: this.date,
     };
     this.testionialService.submitTestimonial(this.testimonial);
+    this.submitted = true;
   }
 
 }
