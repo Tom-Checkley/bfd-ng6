@@ -31,9 +31,10 @@ import { ClearanceComponent } from './_components/public/services/clearance/clea
 import { TankerComponent } from './_components/public/services/tanker/tanker.component';
 import { ServiceNavComponent } from './_components/public/services/service-nav/service-nav.component';
 import { PhoneNumbersComponent } from './_components/shared/phone-numbers/phone-numbers.component';
-import { BlogComponent } from './_components/admin/blog/blog/blog.component';
+import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-admin.component';
 import { ManageBlogsComponent } from './_components/admin/blog/manage-blogs/manage-blogs.component';
 import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.component';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.com
     TankerComponent,
     ServiceNavComponent,
     PhoneNumbersComponent,
-    BlogComponent,
+    BlogAdminComponent,
     ManageBlogsComponent,
     AddBlogComponent,
   ],

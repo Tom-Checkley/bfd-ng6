@@ -12,8 +12,10 @@ import { ClearanceComponent } from './_components/public/services/clearance/clea
 import { InstallationComponent } from './_components/public/services/installation/installation.component';
 import { RepairsComponent } from './_components/public/services/repairs/repairs.component';
 import { TankerComponent } from './_components/public/services/tanker/tanker.component';
+import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-admin.component';
 
 const routes: Routes = [
+  { path: 'admin/blog-admin', component: BlogAdminComponent },
   { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent },
   { path: 'admin/company-info', component: CompanyInfoComponent },
   { path: 'admin', component: AdminHomeComponent },
