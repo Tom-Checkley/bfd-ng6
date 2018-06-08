@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-blogs.component.scss']
 })
 export class ManageBlogsComponent implements OnInit {
+  blogs;
 
   constructor() { }
 

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { FirebaseApp, AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { firebaseConfig } from '../environments/firebase.config';
 
 import { HeaderComponent } from './_components/shared/header/header.component';
@@ -70,6 +71,7 @@ import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.com
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     FormsModule
   ],
   providers: [],
