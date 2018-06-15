@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../../../../_classes/blog';
-import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
+import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { BlogService } from '../../../../_services/blog.service';
 
 @Component({
   selector: 'app-add-blog',
@@ -11,38 +12,82 @@ import { finalize } from 'rxjs/operators';
 })
 export class AddBlogComponent implements OnInit {
 
+  imagePreview: any;
   imageTitle: string;
+  imageAlt: string;
   postTitle: string;
+  file: File;
   postLocation: string;
   postBody: string;
-  date: Date;
-  post: Blog;
+  date: number;
+  post;
   id: any;
-  imageSrc: Observable<string>;
+  imageURL: Observable<string>;
+  snapshot: Observable<any>;
+  uploadPercentage;
+  task: Promise<any>;
+  message: string;
+  fileRef: AngularFireStorageReference;
+  path: string;
   uploadPercent: Observable<number>;
-  task: AngularFireUploadTask;
+  loading = false;
 
-  constructor(private storage: AngularFireStorage) { }
+  constructor(private blogService: BlogService, private storage: AngularFireStorage) { }
 
   ngOnInit() {
   }
 
-  uploadImage($event) {
-    const file = $event.target.files[0];
-    const filePath = `blog-images/${Date.now()}_${file.name}`;
-    const fileRef = this.storage.ref(filePath);
-    // console.log(file, fileRef);
-    this.task = this.storage.upload(filePath, file);
-    this.uploadPercent = this.task.percentageChanges();
-    console.log(this.uploadPercent);
-    this.task.snapshotChanges().pipe(
-      finalize(() => {
-        this.imageSrc = fileRef.getDownloadURL();
-        console.log(this.imageSrc);
-      })
-    ).subscribe();
+  // readUrl = function(event) {
+  //   const reader = new FileReader();
+  //   let imgPrev;
+  //   reader.onload = function(e) {
+  //     imgPrev = e.target.result;
+  //   };
+  //   reader.readAsDataURL(event.target.files[0]);
+  //   return imgPrev;
+  // };
+
+  getImage(event) {
+    this.file = event.target.files[0];
+
+    // console.log(event.target.files, this.file);
+    if (this.file.type.split('/')[0] !== 'image') {
+      this. message = 'Unsupported file type. Please ensure you are uploading an image.';
+      console.error(this.message);
+      return;
+    }
   }
 
-  createPost() {}
+  // uploadImage(img) {
+  //   console.log(img);
+  // }
+
+  createPost(e) {
+    e.preventDefault();
+    this.loading = true;
+    this.path = `blog-images/${this.date}_${this.file.name}`;
+    this.fileRef = this.storage.ref(this.path);
+    this.task = this.storage.upload(this.path, this.file).then(() => {
+      const downloadUrl = this.fileRef.getDownloadURL().subscribe(url => {
+        this.imageURL = url;
+        console.log('called:', this.imageURL);
+        this.date = Date.now();
+        if (!this.postBody) { this.postBody = ''; }
+        this.post = {
+          location: this.postLocation,
+          title: this.postTitle,
+          body: this.postBody,
+          image: this.file,
+          imageAlt: this.imageAlt,
+          date: this.date,
+          imageURL: this.imageURL
+        };
+        console.log(this.post);
+        this.blogService.createPost(this.post);
+        this.loading = false;
+      });
+    });
+    // this.uploadPercent = this.task.percentageChanges();
+  }
 
 }

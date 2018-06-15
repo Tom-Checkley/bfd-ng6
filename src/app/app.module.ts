@@ -35,6 +35,7 @@ import { PhoneNumbersComponent } from './_components/shared/phone-numbers/phone-
 import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-admin.component';
 import { ManageBlogsComponent } from './_components/admin/blog/manage-blogs/manage-blogs.component';
 import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.component';
+import { LoaderComponent } from './_components/shared/loader/loader.component';
 
 
 @NgModule({
@@ -65,14 +66,16 @@ import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.com
     BlogAdminComponent,
     ManageBlogsComponent,
     AddBlogComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

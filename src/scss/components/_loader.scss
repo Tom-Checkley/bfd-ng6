@@ -1,0 +1,60 @@
+// Loader
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+
+// Main
+///////////////////////////
+
+.laoder__wrapper {
+	height: 100%;
+	width: 100%;
+	background-color: $COLOR-Primary;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+}
+
+.loader>* {
+	height: 3em;
+	width: 1em;
+	display: inline-block;
+	background-color: $COLOR-Secondary;
+	margin-right: 4px;
+	animation: grow 1.6s infinite ease-in-out;
+}
+$j: 1.6;
+@for $i from 2 through 6 {
+ $j: $j - 0.1;
+ .loader#{$i} {
+	 animation-delay: #{$j}s;
+ }
+}
+
+@keyframes grow {
+	0%,
+	40%,
+	100% {
+		transform: scaleY(1.0);
+	}
+	20% {
+		transform: scaleY(1.75);
+	}
+}
+
+// Elements
+///////////////////////////
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+
+
