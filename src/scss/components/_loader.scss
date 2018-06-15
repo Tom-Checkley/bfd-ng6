@@ -29,10 +29,10 @@
 }
 $j: 1.6;
 @for $i from 2 through 6 {
- $j: $j - 0.1;
- .loader#{$i} {
-	 animation-delay: #{$j}s;
- }
+	$j: $j - 0.1;
+	.loader#{$i} {
+		animation-delay: #{$j}s;
+	}
 }
 
 @keyframes grow {

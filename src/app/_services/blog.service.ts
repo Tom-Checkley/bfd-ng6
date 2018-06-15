@@ -9,10 +9,22 @@ import { finalize } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BlogService {
-
+  posts: Observable<any[]>;
   dbRef: AngularFireList<any>;
+  blogImage: Observable<string>;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) {
+    this.posts = this.db.list('/posts').valueChanges();
+  }
+
+  getBlogs() {
+    return this.posts;
+  }
+
+  getBlogImage(path) {
+    const ref = this.storage.ref(path);
+    this.blogImage = ref.getDownloadURL();
+  }
 
   createPost(post) {
     this.dbRef = this.db.list('/posts');

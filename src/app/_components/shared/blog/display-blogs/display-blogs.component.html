@@ -1,0 +1,6 @@
+<ul class="list list--posts">
+  {{ blogs | async }}
+  <li class="list__item" *ngFor="let post of blogs" >
+    <app-blog [blog]="post"></app-blog>
+  </li>
+</ul>

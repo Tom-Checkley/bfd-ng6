@@ -36,6 +36,8 @@ import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-adm
 import { ManageBlogsComponent } from './_components/admin/blog/manage-blogs/manage-blogs.component';
 import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.component';
 import { LoaderComponent } from './_components/shared/loader/loader.component';
+import { BlogComponent } from './_components/shared/blog/blog/blog.component';
+import { DisplayBlogsComponent } from './_components/shared/blog/display-blogs/display-blogs.component';
 
 
 @NgModule({
@@ -67,6 +69,8 @@ import { LoaderComponent } from './_components/shared/loader/loader.component';
     ManageBlogsComponent,
     AddBlogComponent,
     LoaderComponent,
+    BlogComponent,
+    DisplayBlogsComponent
   ],
   imports: [
     BrowserModule,

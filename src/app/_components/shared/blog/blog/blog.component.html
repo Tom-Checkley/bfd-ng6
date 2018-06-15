@@ -1,0 +1,12 @@
+<article class="blog">
+  <div class="blog__wrapper">
+    <img [src]="blogImage | async" [alt]="blog?.imageAlt">
+    <div class="blog__content">
+      <h1 class="blog__title">{{ blog?.postTitle }}</h1>
+      <p class="blog__body">{{ blog?.postBody }}</p>
+      <div class="blog__meta">
+        <p><small>Posted on {{blog?.date | date: 'dd LLLL yyyy'}} in {{ blog?.postLocation }}</small></p>
+      </div>
+    </div>
+  </div>
+</article>
