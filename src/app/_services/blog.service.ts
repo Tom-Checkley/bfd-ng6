@@ -11,7 +11,7 @@ import { finalize } from 'rxjs/operators';
 export class BlogService {
   posts: Observable<any[]>;
   dbRef: AngularFireList<any>;
-  blogImage: Observable<string>;
+  blogImage: Observable<string | null>;
 
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) {
     this.posts = this.db.list('/posts').valueChanges();
@@ -19,11 +19,6 @@ export class BlogService {
 
   getBlogs() {
     return this.posts;
-  }
-
-  getBlogImage(path) {
-    const ref = this.storage.ref(path);
-    this.blogImage = ref.getDownloadURL();
   }
 
   createPost(post) {
@@ -36,7 +31,6 @@ export class BlogService {
       date: post.date,
       imageURL: post.imageURL
     });
-    // console.log(newPost);
     newPost.update({id: newPost.key});
   }
 }

@@ -38,6 +38,8 @@ import { AddBlogComponent } from './_components/admin/blog/add-blog/add-blog.com
 import { LoaderComponent } from './_components/shared/loader/loader.component';
 import { BlogComponent } from './_components/shared/blog/blog/blog.component';
 import { DisplayBlogsComponent } from './_components/shared/blog/display-blogs/display-blogs.component';
+import { PoliciesComponent } from './_components/shared/policies/policies.component';
+import { BlogPageComponent } from './_components/public/blog-page/blog-page.component';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { DisplayBlogsComponent } from './_components/shared/blog/display-blogs/d
     AddBlogComponent,
     LoaderComponent,
     BlogComponent,
-    DisplayBlogsComponent
+    DisplayBlogsComponent,
+    PoliciesComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,

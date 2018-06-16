@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../../../../_classes/blog';
 import { BlogService } from '../../../../_services/blog.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-display-blogs',
@@ -8,7 +9,7 @@ import { BlogService } from '../../../../_services/blog.service';
   styleUrls: ['./display-blogs.component.scss']
 })
 export class DisplayBlogsComponent implements OnInit {
-  blogs;
+  blogs: Blog[];
 
   constructor(private blogService: BlogService) { }
 
@@ -16,7 +17,6 @@ export class DisplayBlogsComponent implements OnInit {
     this.blogService.getBlogs().subscribe(posts => {
       this.blogs = posts;
     });
-    console.log(this.blogs);
   }
 
 }

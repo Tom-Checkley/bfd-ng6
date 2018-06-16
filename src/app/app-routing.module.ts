@@ -13,8 +13,11 @@ import { InstallationComponent } from './_components/public/services/installatio
 import { RepairsComponent } from './_components/public/services/repairs/repairs.component';
 import { TankerComponent } from './_components/public/services/tanker/tanker.component';
 import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-admin.component';
+import { BlogPageComponent } from './_components/public/blog-page/blog-page.component';
+
 
 const routes: Routes = [
+  { path: 'blog', component: BlogPageComponent },
   { path: 'admin/blog-admin', component: BlogAdminComponent },
   { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent },
   { path: 'admin/company-info', component: CompanyInfoComponent },
