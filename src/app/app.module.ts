@@ -40,6 +40,8 @@ import { BlogComponent } from './_components/shared/blog/blog/blog.component';
 import { DisplayBlogsComponent } from './_components/shared/blog/display-blogs/display-blogs.component';
 import { PoliciesComponent } from './_components/shared/policies/policies.component';
 import { BlogPageComponent } from './_components/public/blog-page/blog-page.component';
+import { TipsComponent } from './_components/public/tips/tips.component';
+import { AboutComponent } from './_components/public/about/about.component';
 
 
 @NgModule({
@@ -74,7 +76,9 @@ import { BlogPageComponent } from './_components/public/blog-page/blog-page.comp
     BlogComponent,
     DisplayBlogsComponent,
     PoliciesComponent,
-    BlogPageComponent
+    BlogPageComponent,
+    TipsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
