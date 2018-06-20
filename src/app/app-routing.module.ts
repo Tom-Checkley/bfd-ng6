@@ -15,9 +15,13 @@ import { TankerComponent } from './_components/public/services/tanker/tanker.com
 import { BlogAdminComponent } from './_components/admin/blog/blog-admin/blog-admin.component';
 import { BlogPageComponent } from './_components/public/blog-page/blog-page.component';
 import { TipsComponent } from './_components/public/tips/tips.component';
+import { LoginComponent } from './_components/admin/user/login/login.component';
+import { RegisterComponent } from './_components/admin/user/register/register.component';
 
 
 const routes: Routes = [
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'tips', component: TipsComponent },
   { path: 'blog', component: BlogPageComponent },
   { path: 'admin/blog-admin', component: BlogAdminComponent },

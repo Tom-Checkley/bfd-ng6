@@ -42,6 +42,9 @@ import { PoliciesComponent } from './_components/shared/policies/policies.compon
 import { BlogPageComponent } from './_components/public/blog-page/blog-page.component';
 import { TipsComponent } from './_components/public/tips/tips.component';
 import { AboutComponent } from './_components/public/about/about.component';
+import { LoginComponent } from './_components/admin/user/login/login.component';
+import { RegisterComponent } from './_components/admin/user/register/register.component';
+import { AddAdminComponent } from './_components/admin/user/add-admin/add-admin.component';
 
 
 @NgModule({
@@ -78,7 +81,10 @@ import { AboutComponent } from './_components/public/about/about.component';
     PoliciesComponent,
     BlogPageComponent,
     TipsComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent,
+    RegisterComponent,
+    AddAdminComponent
   ],
   imports: [
     BrowserModule,
