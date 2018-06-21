@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent },
   { path: 'admin/company-info', component: CompanyInfoComponent },
   { path: 'admin', component: AdminHomeComponent },
+  { path: 'blogs', component: BlogPageComponent },
   { path: 'services/cctv', component: CctvComponent },
   { path: 'services/clearance', component: ClearanceComponent },
   { path: 'services/installation', component: InstallationComponent },
