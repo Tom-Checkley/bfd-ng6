@@ -17,4 +17,7 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
   }
 
+  deletePost(post) {
+    this.blogService.deletePost(post);
+  }
 }

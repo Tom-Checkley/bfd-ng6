@@ -7,6 +7,9 @@
       <div class="blog__meta">
         <p><small>Posted on {{blog?.date | date: 'dd LLLL yyyy'}} in {{ blog?.location }}</small></p>
       </div>
-    </div>
+      <!-- <div *ngIf="admin"> -->
+        <button class="button button--primary" (click)="deletePost(blog)" >Delete</button>
+      </div>
+    <!-- </div> -->
   </div>
 </article>

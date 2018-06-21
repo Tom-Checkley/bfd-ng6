@@ -28,9 +28,20 @@ export class BlogService {
       title: post.title,
       body: post.body,
       imageAlt: post.imageAlt,
+      imagePath: post.imagePath,
+      imageTitle: post.imageTitle,
       date: post.date,
       imageURL: post.imageURL
     });
     newPost.update({id: newPost.key});
+  }
+
+  deletePost(post) {
+    this.storage.ref('blog-images/')
+      .child(post.imageTitle)
+      .delete();
+
+    this.dbRef = this.db.list('/posts');
+    this.dbRef.remove(post.id);
   }
 }

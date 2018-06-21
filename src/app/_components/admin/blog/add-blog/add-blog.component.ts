@@ -36,7 +36,7 @@ export class AddBlogComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  // TODO - PREVIEW IMAGE
   // readUrl = function(event) {
   //   const reader = new FileReader();
   //   let imgPrev;
@@ -50,7 +50,6 @@ export class AddBlogComponent implements OnInit {
   getImage(event) {
     this.file = event.target.files[0];
 
-    // console.log(event.target.files, this.file);
     if (this.file.type.split('/')[0] !== 'image') {
       this. message = 'Unsupported file type. Please ensure you are uploading an image.';
       console.error(this.message);
@@ -58,32 +57,33 @@ export class AddBlogComponent implements OnInit {
     }
   }
 
-  // uploadImage(img) {
-  //   console.log(img);
-  // }
-
+  // TODO - THIS NEEDS STREAMLINING
+  // TODO - THIS NEEDS PERCENTAGE CHANGES OF UPLOAD
+  // TODO - NEED TO INCORPORATE BLOG INTERFACE
   createPost(e) {
     e.preventDefault();
     this.loading = true;
+    this.date = Date.now();
     this.path = `blog-images/${this.date}_${this.file.name}`;
+    this.imageTitle = `${this.date}_${this.file.name}`;
     this.fileRef = this.storage.ref(this.path);
     this.task = this.storage.upload(this.path, this.file).then(() => {
-      const downloadUrl = this.fileRef.getDownloadURL().subscribe(url => {
+      this.fileRef.getDownloadURL().subscribe(url => {
         this.imageURL = url;
-        console.log('called:', this.imageURL);
-        this.date = Date.now();
         if (!this.postBody) { this.postBody = ''; }
         this.post = {
           location: this.postLocation,
           title: this.postTitle,
           body: this.postBody,
           image: this.file,
+          imagePath: this.path,
+          imageTitle: this.imageTitle,
           imageAlt: this.imageAlt,
           date: this.date,
           imageURL: this.imageURL
         };
-        console.log(this.post);
         this.blogService.createPost(this.post);
+        this.post = {};
         this.loading = false;
       });
     });
