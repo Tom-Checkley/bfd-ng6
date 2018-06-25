@@ -56,9 +56,13 @@ $imgPath:				'./assets/img/';
 // Colors
 ///////////////////////////////////////
 
-$COLOR-Primary:			#242533;
-$COLOR-Secondary:		#ff9800;
+$COLOR-GreyDark:		#242533;
+$COLOR-Orange:			#ff9800;
+$COLOR-GreyLight:		#cccccc;
 $COLOR-White:				#ffffff;
+
+$COLOR-Primary:			$COLOR-GreyDark;
+$COLOR-Secondary:		$COLOR-Orange;
 
 $Opacity:						0.8;
 
@@ -67,5 +71,5 @@ $COLOR-BG-Opaque:		rgba($COLOR-Primary, $Opacity);
 // Borders
 ///////////////////////////////////////
 
-$BORDER:					$COLOR-Primary 1px solid;
+$BORDER:					$COLOR-GreyLight 1px solid;
 $BORDER-Radius:		em($Base-FontSize / 6);

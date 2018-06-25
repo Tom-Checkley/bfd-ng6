@@ -12,8 +12,8 @@ $ARTICLE-Padding:					$Type-LineHeight;
 // Main
 ///////////////////////////
 .article {
-	@include padding(0, $ARTICLE-Padding);
 	@include cf;
+	border-bottom: $BORDER;
 }
 
 

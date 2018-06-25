@@ -33,6 +33,10 @@
   }
 }
 
+.list--posts {
+  @include padding($Type-LineHeight);
+}
+
 // Media Queries
 ///////////////////////////
 @include media ($BP-Med) {
