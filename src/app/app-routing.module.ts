@@ -17,6 +17,7 @@ import { BlogPageComponent } from './_components/public/blog-page/blog-page.comp
 import { TipsComponent } from './_components/public/tips/tips.component';
 import { LoginComponent } from './_components/admin/user/login/login.component';
 import { RegisterComponent } from './_components/admin/user/register/register.component';
+import { LocationsComponent } from './_components/public/locations/locations.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'services/repairs', component: RepairsComponent },
   { path: 'services/tanker', component: TankerComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'locations', component: LocationsComponent },
   { path: 'testimonials', component: TestimonialsComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', component: HomeComponent }

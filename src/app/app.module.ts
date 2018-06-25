@@ -46,6 +46,7 @@ import { LoginComponent } from './_components/admin/user/login/login.component';
 import { RegisterComponent } from './_components/admin/user/register/register.component';
 import { AddAdminComponent } from './_components/admin/user/add-admin/add-admin.component';
 import { SkewedWrapperComponent } from './_components/shared/skewed-wrapper/skewed-wrapper.component';
+import { LocationsComponent } from './_components/public/locations/locations.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { SkewedWrapperComponent } from './_components/shared/skewed-wrapper/skew
     LoginComponent,
     RegisterComponent,
     AddAdminComponent,
-    SkewedWrapperComponent
+    SkewedWrapperComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,

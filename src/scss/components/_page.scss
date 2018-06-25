@@ -26,6 +26,22 @@ $Page-Padding:			$Type-LineHeight;
 // Variants
 ///////////////////////////
 
+.page--home {
+	@include bg-img('drain.jpg', fixed);
+}
+
+.page--tips {
+	@include bg-img('clearance.jpg', fixed);
+}
+
+.page--contact {
+	@include bg-img('tanker.jpg', fixed);
+}
+
+.page--locations {
+	@include bg-img('map.png', fixed);
+}
+
 
 // Media Queries
 ///////////////////////////
