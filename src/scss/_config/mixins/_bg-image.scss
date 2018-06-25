@@ -1,5 +1,7 @@
 @mixin bg-img($url, $attachment: null) {
-	background-image: url('#{$imgPath}#{$url}');
+	$path: #{$imgPath}#{$url};
+	@warn $path;
+	background-image: url(#{$path});
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;

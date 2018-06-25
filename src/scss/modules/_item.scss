@@ -1,26 +1,23 @@
-// PAGE
+// ITEM
 ///////////////////////////
 
 // Variables
 ///////////////////////////
-
-$Page-MinHeight:		100vh;
-$Page-Padding:			$Type-LineHeight;
-
+$ITEM-Padding:				$Type-LineHeight;
+$ITEM-HeadingColor:		$COLOR-Secondary;
 
 // Main
 ///////////////////////////
-
-.page {
-	height: 100%;
-	min-height: $Page-MinHeight;
+.item {
+	min-height: 100%;
+	@include padding($ITEM-Padding);
 }
 
 // Elements
 ///////////////////////////
-
-.page__content {
-	@include padding($Page-Padding);
+.item__title {
+	@include margin-y(0, $ITEM-Padding);
+	color: $ITEM-HeadingColor;
 }
 
 // Variants

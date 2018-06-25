@@ -1,11 +1,15 @@
-<div>
-  <div>
-    <h1>Bristol Faster Drains</h1>
-    <h2>
-      <a href="tel:+">{{ info?.mainNumber }}</a></h2>
-    <h2>
-      <a href="tel:+">{{ info?.secondaryNumber }}</a>
-    </h2>
-  </div>
-  <app-display-stars appDisplayStars [stars]="stars" [outOf]="outOf"></app-display-stars>
+<div class="page home">
+  <app-skewed-wrapper [full]="true">
+      <div class="item">
+          <header class="item__header">
+              <h1 class="item__title">Bristol Faster Drains</h1>
+              <h2 class="item__sub-title">
+                <a href="tel:+">{{ info?.mainNumber }}</a></h2>
+              <h2 class="item__sub-title">
+                <a href="tel:+">{{ info?.secondaryNumber }}</a>
+              </h2>
+            </header>
+            <app-display-stars appDisplayStars [stars]="stars" [outOf]="outOf"></app-display-stars>
+      </div>
+    </app-skewed-wrapper>
 </div>
