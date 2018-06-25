@@ -14,6 +14,7 @@ $SERVICES-Bgs:		'clearance', 'cctv', 'repairs', 'installation', 'tanker';
 ///////////////////////////
 
 .services__service {
+	overflow: hidden;
 	@each $service in $SERVICES-Bgs {
 		&--#{$service} {
 			@include bg-img('#{$service}.jpg');

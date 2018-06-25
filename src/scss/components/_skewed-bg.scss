@@ -45,13 +45,13 @@ $SKEWED-BgColor:				$COLOR-BG-Opaque;
 // Media Queries
 ///////////////////////////
 @include media($BP-Large) {
-	.skewed-bg {
+	.skewed--narrow {
 		@supports (clip-path: $SKEWED-Clip-Wide) {
 			@include clip-path($SKEWED-Clip-Narrow);
 		}
-	}
-	.skewed-bg__content {
-		width: 50%;
+		.skewed__content {
+			width: 50%;
+		}
 	}
 }
 
