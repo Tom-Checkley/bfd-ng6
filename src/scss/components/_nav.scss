@@ -17,6 +17,7 @@ $NAV-Font:		$Font-Headings;
 	text-decoration: none;
 	font-family: $NAV-Font;
 	font-weight: $FontWeight-Bold;
+	color: $COLOR-White;
 	&:hover {
 		text-decoration: underline;
 	}

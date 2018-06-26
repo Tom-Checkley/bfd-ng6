@@ -1,0 +1,32 @@
+// PHONE
+///////////////////////////
+
+// Variables
+///////////////////////////
+$PHONE-FontSize:	$FontSize-XL;
+
+// Main
+///////////////////////////
+.phone {
+	a {
+		text-decoration: none;
+	}
+}
+
+.phone__number {
+	@include font-size($PHONE-FontSize, 1);
+	@include margin-y($Type-LineHeight / 2);
+	@include flex(row, space-between, center);
+}
+
+
+// Elements
+///////////////////////////
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

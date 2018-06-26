@@ -1,8 +1,16 @@
-<div class="phoneNos">
+<div class="phone">
   <a href="tel:+">
-    <h2>{{ info?.mainNumber }}</h2>
+    <!-- <h2 class="phone phone--primary>{{ info?.mainNumber }}</h2> -->
+      <h2 class="phone__number phone__number--primary">
+        <i class="icon icon--phone" role="img" aria-hidden="true"></i>
+        <span>07817 514889</span>
+      </h2>
   </a>
   <a href="tel:+">
-    <h3>{{ info?.secondaryNumber }}</h3>
+    <!-- <h3>{{ info?.secondaryNumber }}</h3> -->
+    <h3 class="phone__number phone__number--secondary">
+      <i class="icon icon--phone" role="img" aria-hidden="true"></i>
+      <span>07817 514889</span>
+    </h3>
   </a>
 </div>
