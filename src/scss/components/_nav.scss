@@ -16,15 +16,41 @@ $NAV-Font:		$Font-Headings;
 .nav__link {
 	text-decoration: none;
 	font-family: $NAV-Font;
-	font-weight: $FontWeight-Bold;
 	color: $COLOR-White;
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: underline;
 	}
+
+	.active & {
+		color: $COLOR-Secondary;
+	}
+	
 }
 
 // Variants
 ///////////////////////////
+
+.nav--main {
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	background-color: $COLOR-Primary;
+	z-index: $Z-Level9;
+	justify-content: space-between;
+	align-items: center;
+
+	.nav__links {
+		@include padding-y($Body-LineHeight * 2);
+		min-height: 100vh;
+	}
+
+	.nav__links {
+		@include flex(column, space-around, center);
+	}
+}
+
 .nav--footer {
 	.nav__links {
 		display: flex;

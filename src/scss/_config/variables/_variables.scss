@@ -73,3 +73,16 @@ $COLOR-BG-Opaque:		rgba($COLOR-Primary, $Opacity);
 
 $BORDER:					$COLOR-GreyLight 1px solid;
 $BORDER-Radius:		em($Base-FontSize / 6);
+
+// Z-Indexes
+///////////////////////////////////////
+
+$Z-Level1:		10;
+$Z-Level2:		20;
+$Z-Level3:		30;
+$Z-Level4:		40;
+$Z-Level5:		50;
+$Z-Level6: 		100;
+$Z-Level7:		200;
+$Z-Level8:		500;
+$Z-Level9:		1000;

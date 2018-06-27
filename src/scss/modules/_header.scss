@@ -21,6 +21,10 @@
 	@include flex(row, space-between, center)
 }
 
+.header__nav {
+ height: 100%;
+}
+
 // Variants
 ///////////////////////////
 // Media Queries
