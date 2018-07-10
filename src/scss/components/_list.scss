@@ -1,7 +1,12 @@
 // LISTS
 ///////////////////////////
+
 // Variables
 ///////////////////////////
+
+$SERVICES-GridHeight:   100vh;
+
+
 // Main
 ///////////////////////////
 .list {
@@ -25,10 +30,10 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  height: auto;
   .list__item {
-    height: 50%;
-    width: 33.33%;
+    height: 250px;
+    width: 100%;
     float: left;
   }
 }
@@ -42,5 +47,22 @@
 @include media ($BP-Med) {
   .list--h {
     @include flex(row, space-around, center);
+  }
+
+  .list--services {
+    height: $SERVICES-GridHeight;
+    .list__item {
+      width: 50%;
+      height: 33.33%
+    }
+  }
+}
+
+@include media($BP-Large) {
+  .list--services {
+    .list__item {
+      width: 33.33%;
+      height: 50%;
+    }
   }
 }

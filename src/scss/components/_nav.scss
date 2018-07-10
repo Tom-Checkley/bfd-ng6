@@ -44,9 +44,6 @@ $NAV-Font:		$Font-Headings;
 	.nav__links {
 		@include padding-y($Body-LineHeight * 2);
 		min-height: 100vh;
-	}
-
-	.nav__links {
 		@include flex(column, space-around, center);
 	}
 }
@@ -75,9 +72,17 @@ $NAV-Font:		$Font-Headings;
 }
 @include media($BP-Large) {
 
-	.nav__links {
-		@include flex(row, space-around, center);
+	.nav--main {
+		position: relative;
+		width: 100%;
+		background-color: inherit;
+		.nav__links {
+			min-height: auto;
+			@include flex(row, space-around, center);
+		}
 	}
+
+	
 	
 	.nav--footer {
 		width: 25%;

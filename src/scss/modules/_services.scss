@@ -22,6 +22,10 @@ $SERVICES-Bgs:		'clearance', 'cctv', 'repairs', 'installation', 'tanker';
 	}
 }
 
+.services__service--contact {
+	display: none;
+}
+
 
 // Variants
 ///////////////////////////
@@ -29,3 +33,9 @@ $SERVICES-Bgs:		'clearance', 'cctv', 'repairs', 'installation', 'tanker';
 
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Med) {
+	.services__service--contact {
+		display: block;
+	}
+}
