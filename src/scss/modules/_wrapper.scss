@@ -1,0 +1,55 @@
+// TEMPLATE
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+
+// Main
+///////////////////////////
+
+.w {
+	min-height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template:
+		'header'
+		'main'
+		'policies'
+		'footer';
+}
+
+
+// Elements
+///////////////////////////
+
+app-header {
+	grid-area: header;
+}
+main {
+	grid-area: main;
+}
+app-policies {
+	grid-area: policies;
+}
+app-footer {
+	grid-area: footer;
+}
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+@include media($BP-Large) {
+	.w {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template: 
+			'header header header header'
+			'main main main policies'
+			'footer footer footer footer'
+	}
+}

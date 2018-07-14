@@ -18,9 +18,11 @@ import { TipsComponent } from './_components/public/tips/tips.component';
 import { LoginComponent } from './_components/admin/user/login/login.component';
 import { RegisterComponent } from './_components/admin/user/register/register.component';
 import { LocationsComponent } from './_components/public/locations/locations.component';
+import { AboutComponent } from './_components/public/about/about.component';
 
 
 const routes: Routes = [
+  { path: 'about', component: AboutComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'tips', component: TipsComponent },
