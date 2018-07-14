@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FirebaseApp, AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConfig } from '../environments/firebase.config';
 
 import { HeaderComponent } from './_components/shared/header/header.component';
@@ -97,6 +98,7 @@ import { LocationsComponent } from './_components/public/locations/locations.com
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    AngularFireAuthModule
 
   ],
   providers: [],
