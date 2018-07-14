@@ -1,3 +1,40 @@
-<p>
-  register works!
-</p>
+
+<div class="page page--register">
+  <app-skewed-wrapper [full]="false">
+    <form (submit)="register()" class="form form--register">
+      <div class="form__row">
+        <label for="email" class="form__label">Email Address</label>
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          id="email"
+          class="form__input"
+        />
+      </div>
+      <div class="form__row">
+        <label for="password" class="form__label"></label>
+        <input
+          class="form__input"
+          [(ngModel)]="password"
+          type="password"
+          name="password" 
+          id="password"
+        />
+      </div>
+      <div class="form__row">
+        <label for="confirm" class="form__label"></label>
+        <input
+          class="form__input"
+          [(ngModel)]="confirm"
+          type="password"
+          name="confirm"
+          id="confirm" 
+        />
+      </div>
+      <div class="form__row">
+        <input type="submit" value="Register" class="button button__primary" />
+      </div>
+    </form>
+  </app-skewed-wrapper>
+</div>

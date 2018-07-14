@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../../../_services/user.service';
 
@@ -10,6 +11,7 @@ import { UserService } from '../../../../_services/user.service';
 export class RegisterComponent implements OnInit {
   email: string;
   password: string;
+  confirm: string;
 
   constructor(public userService: UserService, private router: Router) { }
 
