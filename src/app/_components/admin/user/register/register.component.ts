@@ -9,6 +9,8 @@ import { UserService } from '../../../../_services/user.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  firstName: string;
+  secondName: string;
   email: string;
   password: string;
   confirm: string;
