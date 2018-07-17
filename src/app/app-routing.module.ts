@@ -19,6 +19,7 @@ import { LoginComponent } from './_components/admin/user/login/login.component';
 import { RegisterComponent } from './_components/admin/user/register/register.component';
 import { LocationsComponent } from './_components/public/locations/locations.component';
 import { AboutComponent } from './_components/public/about/about.component';
+import { AddAdminComponent } from './_components/admin/user/add-admin/add-admin.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogPageComponent },
   { path: 'admin/blog-admin', component: BlogAdminComponent },
   { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent },
+  { path: 'admin/add-admin-email', component: AddAdminComponent },
   { path: 'admin/company-info', component: CompanyInfoComponent },
   { path: 'admin', component: AdminHomeComponent },
   { path: 'blogs', component: BlogPageComponent },

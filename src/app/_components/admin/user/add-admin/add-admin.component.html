@@ -1,3 +1,25 @@
-<p>
-  add-admin works!
-</p>
+<div class="page page--addAdmin">
+  <app-skewed-wrapper>
+    <section class="page__content">
+        <h1 class="page__title">Add admin</h1>
+        <p>For a user to register as admin their email address must first be registered. Enter the email address below.</p>
+        <form (submit)="addAdmin()" class="form--addAdmin">
+          <div class="form__row">
+            <label for="addAdminEmail" class="form__label">Email address</label>
+            <input [(ngModel)]="email" type="email" name="addAdminEmail" id="addAdminEmail" class="form__input">
+          </div>
+          <div class="form__row">
+            <input type="submit" value="Add Email" class="button button--primary">
+          </div>
+        </form>
+    </section>
+    <section class="page__content">
+      <h2>Registered users</h2>
+      <ul class="list list--users">
+        <li class="list__item" *ngFor="let email of registeredEmails">
+          {{email.email}}
+        </li>
+      </ul>
+    </section>
+  </app-skewed-wrapper>
+</div>
