@@ -63,6 +63,12 @@ $NAV-Font:		$Font-Headings;
 	@include padding-x($Type-LineHeight);
 }
 
+.nav--admin {
+	.nav__link {
+		color: $COLOR-Primary;
+	}
+}
+
 // Media Queries
 ///////////////////////////
 @include media($BP-Med) {
