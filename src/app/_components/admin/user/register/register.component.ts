@@ -14,17 +14,36 @@ export class RegisterComponent implements OnInit {
   email: string;
   password: string;
   confirm: string;
+  registeredEmails: any[];
+  isRegistered = false;
+  message: string;
 
   constructor(public userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.userService.getRegisteredEmails()
+      .subscribe(registered => {
+        this.registeredEmails = registered;
+      });
   }
 
   register() {
-    this.userService.registerUser(this.email, this.password);
-    this.email = '';
-    this.password = '';
-    this.router.navigate(['/login']);
+    this.registeredEmails.forEach(item => {
+      if (item['email'] === this.email) {
+        this.isRegistered = true;
+      }
+    });
+    if (this.isRegistered) {
+      this.userService.registerUser(this.email, this.password);
+      this.message = 'Success, you\'re now registered as an admin';
+      this.email = '';
+      this.password = '';
+      console.log(this.message);
+      this.router.navigate(['/login']);
+    } else {
+      this.message = 'Sorry you are not authorised to register as an admin';
+      console.log(this.message);
+    }
   }
 
 }

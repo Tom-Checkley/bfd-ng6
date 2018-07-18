@@ -10,17 +10,17 @@ export class AddAdminComponent implements OnInit {
   email: string;
   registeredEmails;
 
-  constructor(private afAuth: UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.afAuth.getRegisteredEmails()
+    this.userService.getRegisteredEmails()
       .subscribe(registered => {
         this.registeredEmails = registered;
       });
   }
 
   addAdmin() {
-    this.afAuth.registerAdminEmail(this.email);
+    this.userService.registerAdminEmail(this.email);
   }
 
 }
