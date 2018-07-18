@@ -1,6 +1,6 @@
 <div class="page page--login">
   <app-skewed-wrapper [full]="false">
-    <form action="" class="form form--login">
+    <form (submit)="login()" class="form form--login">
       <div class="form__row">
         <label for="email" class="form__label">Email</label>
         <input [(ngModel)]="email" name="email" type="email" class="form__input" placeholder="Email Adderss">

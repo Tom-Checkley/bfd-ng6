@@ -46,7 +46,8 @@ export class UserService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(val => {
-        console.log('Logged in');
+        console.log('Logged in', val);
+        this.user = val;
       })
       .catch(err => {
         console.error('Something went wrong:', err.message);
