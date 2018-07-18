@@ -10,13 +10,19 @@ import { UserService } from '../../../../_services/user.service';
 })
 export class RegisterComponent implements OnInit {
   firstName: string;
-  secondName: string;
+  lastName: any;
   email: string;
   password: string;
   confirm: string;
+  uid: string;
   registeredEmails: any[];
   isRegistered = false;
   message: string;
+  newUser: {
+    firstName: string;
+    lastName: string;
+    email: string;
+  };
 
   constructor(public userService: UserService, private router: Router) { }
 
@@ -33,17 +39,30 @@ export class RegisterComponent implements OnInit {
         this.isRegistered = true;
       }
     });
-    if (this.isRegistered) {
-      this.userService.registerUser(this.email, this.password);
-      this.message = 'Success, you\'re now registered as an admin';
-      this.email = '';
-      this.password = '';
-      console.log(this.message);
-      this.router.navigate(['/login']);
-    } else {
-      this.message = 'Sorry you are not authorised to register as an admin';
-      console.log(this.message);
+    if (this.password === this.confirm) {
+      if (this.isRegistered) {
+        const newAdmin = this.userService.registerUser(this.email, this.password);
+        this.addUser();
+        this.message = 'Success, you\'re now registered as an admin';
+        this.email = '';
+        this.password = '';
+        console.log(this.message);
+        this.router.navigate(['/login']);
+      } else {
+        this.message = 'Sorry you are not authorised to register as an admin';
+        console.log(this.message);
+      }
     }
+  }
+
+  addUser() {
+    const newUser = this.newUser = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      // uid: this.uid
+    };
+    this.userService.addUser(newUser);
   }
 
 }

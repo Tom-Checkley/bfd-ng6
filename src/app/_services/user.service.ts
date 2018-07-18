@@ -11,6 +11,7 @@ import { AngularFireList, AngularFireDatabase } from '../../../node_modules/angu
 export class UserService {
   user: Observable<firebase.User>;
   adminEmailRef: Observable<any[]> | AngularFireList<any>;
+  userDbRef: Observable<any[]> | AngularFireList<any>;
   private authState: any;
 
 
@@ -32,6 +33,12 @@ export class UserService {
         console.error('Something went wrong:', err.message);
       }
     );
+  }
+
+  addUser(user) {
+    this.userDbRef = this.db.list('/users');
+    const newUser = this.userDbRef.push(user);
+    newUser.update({id: newUser.key});
   }
 
   login(email: string, password: string) {
