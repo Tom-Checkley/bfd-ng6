@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
@@ -9,13 +10,15 @@ import { AngularFireList, AngularFireDatabase } from '../../../node_modules/angu
   providedIn: 'root'
 })
 export class UserService {
-  user: Observable<firebase.User>;
+  user: any;
+  userLoggedIn: boolean;
   adminEmailRef: Observable<any[]> | AngularFireList<any>;
   userDbRef: Observable<any[]> | AngularFireList<any>;
   private authState: any;
+  loggedInUser: any;
 
 
-  constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase) {
+  constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
     });
@@ -47,12 +50,33 @@ export class UserService {
       .signInWithEmailAndPassword(email, password)
       .then(val => {
         console.log('Logged in', val);
-        this.user = val;
+        this.verifyUser();
+        console.log(this.loggedInUser);
       })
       .catch(err => {
         console.error('Something went wrong:', err.message);
       }
     );
+  }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const url: string = state.url;
+    return this.verifyLogin(url);
+  }
+
+  verifyLogin(url: string): boolean {
+    if (this.userLoggedIn) { return true; }
+    this.router.navigate(['/login']);
+    return false;
+  }
+
+  verifyUser() {
+    this.user = this.afAuth.auth.currentUser;
+    if (this.user) {
+      this.loggedInUser = this.user;
+      this.userLoggedIn = true;
+      this.router.navigate(['/admin/home']);
+    }
   }
 
   logout() {
