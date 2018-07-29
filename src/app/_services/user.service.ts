@@ -75,14 +75,18 @@ export class UserService {
     if (this.user) {
       this.loggedInUser = this.user;
       this.userLoggedIn = true;
-      this.router.navigate(['/admin/home']);
+      this.router.navigate(['/admin']);
     }
   }
 
   logout() {
     this.afAuth
       .auth
-      .signOut();
+      .signOut().then(() => {
+        this.router.navigate(['']);
+      }).catch((err) => {
+        console.log(err);
+      });
   }
 
   registerAdminEmail(email: string) {

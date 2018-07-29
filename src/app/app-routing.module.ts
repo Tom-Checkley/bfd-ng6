@@ -20,6 +20,7 @@ import { RegisterComponent } from './_components/admin/user/register/register.co
 import { LocationsComponent } from './_components/public/locations/locations.component';
 import { AboutComponent } from './_components/public/about/about.component';
 import { AddAdminComponent } from './_components/admin/user/add-admin/add-admin.component';
+import { UserService } from './_services/user.service';
 
 
 const routes: Routes = [
@@ -28,11 +29,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'tips', component: TipsComponent },
   { path: 'blog', component: BlogPageComponent },
-  { path: 'admin/blog-admin', component: BlogAdminComponent },
-  { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent },
-  { path: 'admin/add-admin-email', component: AddAdminComponent },
-  { path: 'admin/company-info', component: CompanyInfoComponent },
-  { path: 'admin', component: AdminHomeComponent },
+  { path: 'admin/blog-admin', component: BlogAdminComponent, canActivate: [UserService] },
+  { path: 'admin/verify-testimonials', component: VerifyTestimonialsComponent, canActivate: [UserService] },
+  { path: 'admin/add-admin-email', component: AddAdminComponent, canActivate: [UserService] },
+  { path: 'admin/company-info', component: CompanyInfoComponent, canActivate: [UserService] },
+  { path: 'admin', component: AdminHomeComponent, canActivate: [UserService] },
   { path: 'blogs', component: BlogPageComponent },
   { path: 'services/cctv', component: CctvComponent },
   { path: 'services/clearance', component: ClearanceComponent },
