@@ -32,14 +32,15 @@ $NAV-Font:		$Font-Headings;
 ///////////////////////////
 
 .nav--main {
-	position: fixed;
-	top: 0;
-	left: 100%;
-	width: 100%;
-	background-color: $COLOR-Primary;
-	z-index: $Z-Level9;
-	justify-content: space-between;
-	align-items: center;
+	
+	nav {
+		background-color: $COLOR-Primary;
+		justify-content: space-between;
+		align-items: center;
+		position: fixed;
+		left: 100%;
+		width: 100%;
+	}
 
 	.nav__links {
 		@include padding-y($Body-LineHeight * 2);

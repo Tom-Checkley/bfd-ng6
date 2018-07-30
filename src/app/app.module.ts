@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -89,7 +90,7 @@ import { LocationsComponent } from './_components/public/locations/locations.com
     RegisterComponent,
     AddAdminComponent,
     SkewedWrapperComponent,
-    LocationsComponent
+    LocationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,8 +99,8 @@ import { LocationsComponent } from './_components/public/locations/locations.com
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
-
+    AngularFireAuthModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

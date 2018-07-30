@@ -22,7 +22,12 @@
 }
 
 .header__nav {
- height: 100%;
+	position: fixed;
+	top: 0;
+	// left: 100%;
+	width: 100%;
+	background-color: $COLOR-Primary;
+	z-index: $Z-Level9;
 }
 
 // Variants

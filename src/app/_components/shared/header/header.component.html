@@ -7,7 +7,8 @@
     </div>
     <app-phone-numbers></app-phone-numbers>
   </div>
-  <div class="header__nav">
-      <app-nav class="nav nav--main"></app-nav>
+  <button class="header__menu-button" (click)="toggleMenu()"><i>&#9776;</i></button>
+  <div class="header__nav" >
+      <app-nav class="nav nav--main" [menuState]="menuState" ></app-nav>
   </div>
 </header>

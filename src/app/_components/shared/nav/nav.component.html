@@ -1,46 +1,46 @@
-<nav>
+<nav [@slideInOut]="menuState">
   <ul class="list list--nav nav__links">
     <li class="list__item nav__item"
       [routerLinkActive]="['active']"
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/about']">About</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/about']">About</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']"
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/services']">Services</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/services']">Services</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']"
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/testimonials']">Testimonials</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/testimonials']">Testimonials</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']"
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/tips']">Hints &amp; Tips</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/tips']">Hints &amp; Tips</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']" 
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/locations']">Locations</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/locations']">Locations</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']" 
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/contact']">Contact</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/contact']">Contact</a>
     </li>
     <li class="list__item nav__item"
       [routerLinkActive]="['active']" 
       [routerLinkActiveOptions]="{exact:true}"
     >
-      <a class="nav__link" [routerLink]="['/blogs']">Blog</a>
+      <a class="nav__link" (click)="toggleMenu()" [routerLink]="['/blogs']">Blog</a>
     </li>
   </ul>
 </nav>
