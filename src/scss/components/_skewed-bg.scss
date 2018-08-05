@@ -16,6 +16,7 @@ $SKEWED-BgColor:				$COLOR-BG-Opaque;
 	width: 100%;
 	margin-top: -8px;
 	margin-bottom: -8px;
+	position: relative;
 
 	// include bg image skewed overlay for browsers not supporting clip path
 	@include bg-img('bg-overlay.png');

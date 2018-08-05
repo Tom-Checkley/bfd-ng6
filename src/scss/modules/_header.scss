@@ -12,6 +12,8 @@
 	background-color: $COLOR-Primary;
 	color: $COLOR-Secondary;
 	@include padding($Body-LineHeight);
+	position: relative;
+	z-index: 1;
 }
 
 // Elements
@@ -22,8 +24,6 @@
 }
 
 .header__nav {
-	position: fixed;
-	top: 0;
 	// left: 100%;
 	width: 100%;
 	background-color: $COLOR-Primary;
@@ -34,3 +34,9 @@
 ///////////////////////////
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Large) {
+	.header__menu-button {
+		display: none;
+	}
+}

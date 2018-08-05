@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 // import { AngularFireDatabase } from 'angularfire2/database';
 // import { Observable } from 'rxjs';
@@ -26,17 +26,36 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   // ]
 })
 export class HeaderComponent implements OnInit {
-  @Output() menuState = 'out';
+  @Output() menuState: string;
   info: any;
 
   constructor() {}
 
   ngOnInit() {
     console.log(this.menuState);
+    this.screenWidth(event);
   }
 
   toggleMenu() {
-    this.menuState === 'in' ? this.menuState = 'out' : this.menuState = 'in';
+    this.menuState === 'in'
+        ? this.menuState = 'out'
+        : this.menuState = 'in';
+  }
+
+  screenWidth(event) {
+    if (event) {
+      if (event.target.innerWidth >= 800) {
+        this.menuState = 'in';
+      } else {
+        this.menuState = 'out';
+      }
+    } else {
+      if (window.innerWidth >= 800) {
+        this.menuState = 'in';
+      } else {
+        this.menuState = 'out';
+      }
+    }
   }
 
 }

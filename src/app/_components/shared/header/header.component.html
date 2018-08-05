@@ -8,7 +8,7 @@
     <app-phone-numbers></app-phone-numbers>
   </div>
   <button class="header__menu-button" (click)="toggleMenu()"><i>&#9776;</i></button>
-  <div class="header__nav" >
-      <app-nav class="nav nav--main" [menuState]="menuState" ></app-nav>
+  <div class="header__nav" (window:resize)="screenWidth($event)">
+      <app-nav class="nav nav--main" [(menuState)]="menuState" (menuStateChange)="this.menuState = $event"></app-nav>
   </div>
 </header>

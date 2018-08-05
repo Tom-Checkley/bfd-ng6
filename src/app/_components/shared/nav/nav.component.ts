@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { trigger, style, state, transition, animate } from '@angular/animations';
+// import {  } from 'events';
 
 @Component({
   selector: 'app-nav',
@@ -8,51 +9,39 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
   animations: [
     trigger('slideInOut', [
       state('in', style({
-        // display: 'block',
+        display: 'block',
         left: '0'
       })),
       state('out', style({
         left: '100%',
-        // display: 'none'
+        display: 'none'
       })),
       transition('in => out', animate('400ms ease-in-out')),
       transition('out => in', animate('400ms ease-in-out'))
     ]),
   ]
 })
-export class NavComponent implements OnInit, OnChanges {
+export class NavComponent implements OnInit {
   @Input() menuState: string;
+  @Output() menuStateChange = new EventEmitter();
   smallScreen;
+
 
   constructor() { }
 
   ngOnInit() {
-    // this.screenWidth();
-    this.toggleMenu(this.menuState);
 
   }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(this.menuState);
-    this.toggleMenu(changes.menuState.currentValue);
-  }
-
-  // screenWidth() {
-  //   if (window.innerWidth >= 800) {
-  //     this.menuState = 'in';
-  //     this.smallScreen = false;
-  //   } else {
-  //     this.menuState = 'out';
-  //     this.smallScreen = true;
-  //   }
-  // }
 
   toggleMenu(menuState) {
-    // console.log(this.menuState, menuState);
+    console.log(this.menuState, menuState);
     if (window.innerWidth <= 800) {
       this.menuState === 'out'
-                    ? this.menuState = 'in'
-                    : this.menuState = 'out';
+          ? this.menuState = 'in'
+          : this.menuState = 'out';
+      this.menuStateChange.emit(this.menuState);
+    } else {
+      this.menuState = 'out';
     }
   }
 

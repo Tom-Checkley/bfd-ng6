@@ -33,18 +33,22 @@ $NAV-Font:		$Font-Headings;
 
 .nav--main {
 	
+	background-color: $COLOR-Primary;
 	nav {
-		background-color: $COLOR-Primary;
+		background-color: inherit;
 		justify-content: space-between;
 		align-items: center;
 		position: fixed;
+		top: 0;
 		left: 100%;
 		width: 100%;
+		height: 100vh;
+		overflow-y: auto;
 	}
 
 	.nav__links {
 		@include padding-y($Body-LineHeight * 2);
-		min-height: 100vh;
+		height: 100%;
 		@include flex(column, space-around, center);
 	}
 }
@@ -80,12 +84,19 @@ $NAV-Font:		$Font-Headings;
 @include media($BP-Large) {
 
 	.nav--main {
-		position: relative;
-		width: 100%;
-		background-color: inherit;
+		nav {
+			position: relative;
+			height: auto;
+			left: unset;
+			top: unset;
+			z-index: $Z-Level9;
+		}
 		.nav__links {
-			min-height: auto;
+			height: auto;
+			flex-direction: row;
+			margin-top: 1rem;
 			@include flex(row, space-around, center);
+			@include padding-y(0);
 		}
 	}
 
