@@ -1,0 +1,40 @@
+// TEMPLATE
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$BUTTON-Color:				$COLOR-Secondary;
+$BUTTON-BgColor:			$COLOR-Primary;
+$BUTTON-PaddingY:			$Type-LineHeight / 4;
+$BUTTON-PaddingX:			$Type-LineHeight / 2;
+$BUTTON-HoverColor:		$COLOR-Primary;
+$BUTTON-HoverBgColor:	$COLOR-Secondary;
+$BUTTON-BorderRadius:	$BORDER-Radius;
+
+// Main
+///////////////////////////
+
+.button {
+	// @warn $BUTTON-Padding;
+	@include padding($BUTTON-PaddingY, $BUTTON-PaddingX);
+	border: 2px solid $BUTTON-Color;
+	border-radius: $BUTTON-BorderRadius;
+	color: $BUTTON-Color;
+
+	&:hover {
+		background-color: $BUTTON-Color;
+		color: $BU-BgColor;
+	}
+}
+
+// Elements
+///////////////////////////
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////

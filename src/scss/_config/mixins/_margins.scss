@@ -144,3 +144,27 @@
 		margin-bottom: $b;
 	}
 }
+
+
+// MARGIN-RIGHT
+/////////////////////////////////////////
+
+@mixin margin-right($r) {
+	$r: pxOrPercent($r);
+	@if(unitless($r)) {
+		$r: em($r)
+	}
+	margin-right: $r;
+}
+
+
+// MARGIN-LEFT
+/////////////////////////////////////////
+
+@mixin margin-left($l) {
+	$l: pxOrPercent($l);
+	@if(unitless($l)) {
+		$l: em($l)
+	}
+	margin-left: $l;
+}

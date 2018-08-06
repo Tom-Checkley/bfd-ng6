@@ -30,6 +30,16 @@
 	z-index: $Z-Level9;
 }
 
+.header__menu-button {
+	color: $COLOR-White;
+	@include font-size($FontSize-XXXL, 1);
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		color: $COLOR-Secondary;
+	}
+}
+
 // Variants
 ///////////////////////////
 // Media Queries

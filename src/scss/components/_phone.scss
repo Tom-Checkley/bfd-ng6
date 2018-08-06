@@ -17,6 +17,13 @@ $PHONE-FontSize:	$FontSize-XL;
 	@include font-size($PHONE-FontSize, 1);
 	@include margin-y($Type-LineHeight / 2);
 	@include flex(row, space-between, center);
+	.icon {
+		@include margin-right($Type-LineHeight / 4);
+	}
+}
+
+.phone__number--secondary {
+	display: none;
 }
 
 
@@ -30,3 +37,12 @@ $PHONE-FontSize:	$FontSize-XL;
 
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Med) {
+	.phone__number {
+		border: none;
+	}
+	.phone__number--secondary {
+		display: block;
+	}
+}
