@@ -44,13 +44,13 @@ export class HeaderComponent implements OnInit {
 
   screenWidth(event) {
     if (event) {
-      if (event.target.innerWidth >= 800) {
+      if (event.target.innerWidth >= 1024) {
         this.menuState = 'in';
       } else {
         this.menuState = 'out';
       }
     } else {
-      if (window.innerWidth >= 800) {
+      if (window.innerWidth >= 1024) {
         this.menuState = 'in';
       } else {
         this.menuState = 'out';

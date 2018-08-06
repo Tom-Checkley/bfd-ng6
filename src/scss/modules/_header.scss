@@ -4,6 +4,9 @@
 // Variables
 ///////////////////////////
 
+$HEADER-FontSize-Sm:		$FontSize-XXL;
+$HEADER-FontSize-Lg:		$FontSize-XXXL;
+
 
 // Main
 ///////////////////////////
@@ -27,7 +30,6 @@
 	@include flex($justify: space-between, $align: center);
 }
 
-
 .header__nav {
 	// left: 100%;
 	width: 100%;
@@ -45,20 +47,23 @@
 	}
 }
 
-// Variants
-///////////////////////////
+.header__title {
+	@include font-size($HEADER-FontSize-Sm, 1.1);
+}
+
 // Media Queries
 ///////////////////////////
 
 @include media($BP-Large) {
 
+	.header__title {
+		@include font-size($HEADER-FontSize-Lg, 1);
+		@include margin(0);
+	}
+
 	.header__container {
 		@include flex(row, space-between, center);
 		width: 100%;
-	}
-
-	.header__top {
-		// @include flex(row, space-between, center);
 	}
 
 	.header__menu-button {

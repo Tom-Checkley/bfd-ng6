@@ -34,8 +34,7 @@ export class NavComponent implements OnInit {
   }
 
   toggleMenu(menuState) {
-    console.log(this.menuState, menuState);
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 1024) {
       this.menuState === 'out'
           ? this.menuState = 'in'
           : this.menuState = 'out';

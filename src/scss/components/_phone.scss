@@ -3,7 +3,8 @@
 
 // Variables
 ///////////////////////////
-$PHONE-FontSize:	$FontSize-XL;
+$PHONE-FontSize-Med:	$FontSize-L;
+$PHONE-FontSize-Lg:		$FontSize-XL;
 
 // Main
 ///////////////////////////
@@ -20,7 +21,7 @@ $PHONE-FontSize:	$FontSize-XL;
 ///////////////////////////
 
 .phone__number {
-	@include font-size($PHONE-FontSize, 1);
+	@include font-size($PHONE-FontSize-Med, 1);
 	@include margin-y($Type-LineHeight / 2);
 	// @include flex(row, space-between, center);
 	display: inline-block;
@@ -45,6 +46,7 @@ $PHONE-FontSize:	$FontSize-XL;
 
 @include media($BP-Med) {
 	.phone__number {
+		@include font-size($PHONE-FontSize-Lg, 1);
 		border: none;
 		@include padding(0);
 
@@ -58,6 +60,6 @@ $PHONE-FontSize:	$FontSize-XL;
 	}
 	.phone__number--secondary {
 		display: block;
-		@include margin-bottom(0);
+		@include margin-y(0);
 	}
 }
