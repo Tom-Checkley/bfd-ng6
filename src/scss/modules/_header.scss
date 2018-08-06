@@ -16,12 +16,17 @@
 	z-index: 1;
 }
 
+.header__container {
+	width: 70%;
+}
+
 // Elements
 ///////////////////////////
 
 .header__top {
-	@include flex(row, space-between, center)
+	@include flex($justify: space-between, $align: center);
 }
+
 
 .header__nav {
 	// left: 100%;
@@ -46,6 +51,16 @@
 ///////////////////////////
 
 @include media($BP-Large) {
+
+	.header__container {
+		@include flex(row, space-between, center);
+		width: 100%;
+	}
+
+	.header__top {
+		// @include flex(row, space-between, center);
+	}
+
 	.header__menu-button {
 		display: none;
 	}

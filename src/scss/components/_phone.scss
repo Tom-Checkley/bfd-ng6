@@ -7,33 +7,38 @@ $PHONE-FontSize:	$FontSize-XL;
 
 // Main
 ///////////////////////////
+
 .phone {
 	a {
 		text-decoration: none;
+		width: auto;
 	}
-}
-
-.phone__number {
-	@include font-size($PHONE-FontSize, 1);
-	@include margin-y($Type-LineHeight / 2);
-	@include flex(row, space-between, center);
-	.icon {
-		@include margin-right($Type-LineHeight / 4);
-	}
-}
-
-.phone__number--secondary {
-	display: none;
 }
 
 
 // Elements
 ///////////////////////////
 
+.phone__number {
+	@include font-size($PHONE-FontSize, 1);
+	@include margin-y($Type-LineHeight / 2);
+	// @include flex(row, space-between, center);
+	display: inline-block;
+	flex-grow: 0;
+	width: auto;
+
+	.icon {
+		@include margin-right($Type-LineHeight / 4);
+	}
+}
+
 
 // Variants
 ///////////////////////////
 
+.phone__number--secondary {
+	display: none;
+}
 
 // Media Queries
 ///////////////////////////
@@ -41,8 +46,18 @@ $PHONE-FontSize:	$FontSize-XL;
 @include media($BP-Med) {
 	.phone__number {
 		border: none;
+		@include padding(0);
+
+		&:hover {
+			color: inherit;
+			background-color: inherit;
+		}
+	}
+	.phone__number--primary {
+		@include margin-top(0);
 	}
 	.phone__number--secondary {
 		display: block;
+		@include margin-bottom(0);
 	}
 }

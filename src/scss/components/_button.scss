@@ -16,7 +16,6 @@ $BUTTON-BorderRadius:	$BORDER-Radius;
 ///////////////////////////
 
 .button {
-	// @warn $BUTTON-Padding;
 	@include padding($BUTTON-PaddingY, $BUTTON-PaddingX);
 	border: 2px solid $BUTTON-Color;
 	border-radius: $BUTTON-BorderRadius;
@@ -24,16 +23,23 @@ $BUTTON-BorderRadius:	$BORDER-Radius;
 
 	&:hover {
 		background-color: $BUTTON-Color;
-		color: $BU-BgColor;
+		color: $BUTTON-BgColor;
 	}
 }
-
-// Elements
-///////////////////////////
 
 
 // Variants
 ///////////////////////////
+
+.button--inverted {
+	background-color: $BUTTON-Color;
+	color: $BUTTON-BgColor;
+
+	&:hover {
+		background-color: $BUTTON-BgColor;
+		color: $BUTTON-Color;
+	}
+}
 
 
 // Media Queries

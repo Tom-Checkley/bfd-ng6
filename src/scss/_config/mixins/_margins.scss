@@ -146,6 +146,28 @@
 }
 
 
+// MARGIN-TOP
+/////////////////////////////////////////
+
+@mixin margin-top($t) {
+	$t: pxOrPercent($t);
+	@if(unitless($t)) {
+		$t: em($t)
+	}
+	margin-top: $t;
+}
+
+// MARGIN-BOTTOM
+/////////////////////////////////////////
+
+@mixin margin-bottom($b) {
+	$b: pxOrPercent($b);
+	@if(unitless($b)) {
+		$b: em($b)
+	}
+	margin-bottom: $b;
+}
+
 // MARGIN-RIGHT
 /////////////////////////////////////////
 

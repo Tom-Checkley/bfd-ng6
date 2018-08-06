@@ -144,3 +144,48 @@
 		padding-bottom: $b;
 	}
 }
+
+// PADDING-TOP
+/////////////////////////////////////////
+
+@mixin padding-top($t) {
+	$t: pxOrPercent($t);
+	@if(unitless($t)) {
+		$t: em($t)
+	}
+	padding-top: $t;
+}
+
+// PADDING-BOTTOM
+/////////////////////////////////////////
+
+@mixin padding-bottom($b) {
+	$b: pxOrPercent($b);
+	@if(unitless($b)) {
+		$b: em($b)
+	}
+	padding-bottom: $b;
+}
+
+// PADDING-RIGHT
+/////////////////////////////////////////
+
+@mixin padding-right($r) {
+	$r: pxOrPercent($r);
+	@if(unitless($r)) {
+		$r: em($r)
+	}
+	padding-right: $r;
+}
+
+
+// PADDING-LEFT
+/////////////////////////////////////////
+
+@mixin padding-left($l) {
+	$l: pxOrPercent($l);
+	@if(unitless($l)) {
+		$l: em($l)
+	}
+	padding-left: $l;
+}

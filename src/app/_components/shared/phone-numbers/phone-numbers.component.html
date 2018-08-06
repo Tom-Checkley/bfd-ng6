@@ -1,19 +1,14 @@
 <div class="phone">
-  <a href="tel:+">
+  <a href="tel:{{ info?.mainNumber }}">
     <h2 class="phone__number phone__number--primary button">
         <i class="icon icon--phone" role="img" aria-hidden="true"></i>
         <span>{{ info?.mainNumber }}</span>
       </h2>
-      <!-- <h2 class="phone__number phone__number--primary">
-        <i class="icon icon--phone" role="img" aria-hidden="true"></i>
-        <span>07817 514889</span>
-      </h2> -->
   </a>
-  <a href="tel:+">
-    <!-- <h3>{{ info?.secondaryNumber }}</h3> -->
-    <h3 class="phone__number phone__number--secondary">
+  <a href="tel:{{ info?.secondaryNumber }}">
+    <h3 class="phone__number phone__number--secondary button">
       <i class="icon icon--phone" role="img" aria-hidden="true"></i>
-      <span>07817 514889</span>
+      <span>{{ info?.secondaryNumber }}</span>
     </h3>
   </a>
 </div>
