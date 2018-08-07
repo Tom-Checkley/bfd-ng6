@@ -11,13 +11,8 @@
 .w {
 	min-height: 100vh;
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template:
-		'header'
-		'main'
-		'policies'
-		'footer';
+	display: flex;
+	flex-wrap: wrap
 }
 
 
@@ -25,16 +20,16 @@
 ///////////////////////////
 
 app-header {
-	grid-area: header;
+	width: 100%;
 }
 main {
-	grid-area: main;
+	width: 100%;
 }
 app-policies {
-	grid-area: policies;
+	width: 100%;
 }
 app-footer {
-	grid-area: footer;
+	width: 100%;
 }
 
 
@@ -46,10 +41,12 @@ app-footer {
 ///////////////////////////
 @include media($BP-Large) {
 	.w {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template: 
-			'header header header header'
-			'main main main policies'
-			'footer footer footer footer'
+		main {
+			width: 66.66%;
+		}
+		app-policies {
+			width: 33.33%;
+			max-width: 490px;
+		}
 	}
 }

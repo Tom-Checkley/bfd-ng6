@@ -11,6 +11,10 @@ $SKEWED-BgColor:				$COLOR-BG-Opaque;
 // Main
 ///////////////////////////
 
+app-skewed-wrapper {
+	width: 100%;
+}
+
 .skewed {
 	height: calc(100% + 16px);
 	width: 100%;
@@ -35,7 +39,7 @@ $SKEWED-BgColor:				$COLOR-BG-Opaque;
 	width: 60%;
 	color: $COLOR-White;
 	@supports (clip-path: $SKEWED-Clip-Wide) {
-		width: 80%;	
+		width: 70%;	
 	}
 }
 
@@ -51,7 +55,7 @@ $SKEWED-BgColor:				$COLOR-BG-Opaque;
 			@include clip-path($SKEWED-Clip-Narrow);
 		}
 		.skewed__content {
-			width: 50%;
+			width: 70%;
 		}
 	}
 }

@@ -42,6 +42,15 @@ $SERVICES-GridHeight:   100vh;
   @include padding($Type-LineHeight);
 }
 
+.list--policies {
+  .list__item {
+    @include font-size($FontSize-XL);
+    font-family: $Font-MainBold;
+    @include margin-bottom($Type-LineHeight / 1.5);
+    @include flex($align: center);
+  }
+}
+
 // Media Queries
 ///////////////////////////
 @include media ($BP-Med) {

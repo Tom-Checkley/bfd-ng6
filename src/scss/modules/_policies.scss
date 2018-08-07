@@ -1,0 +1,39 @@
+// POLICIES
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$POLICIES-BgColor:	$COLOR-Secondary;
+$POLICIES-Color:		$COLOR-Primary;
+$POLICIES-Padding:	$Type-LineHeight;
+
+
+// Main
+///////////////////////////
+
+.policies {
+	width: 100%;
+	height: 100%;
+	background-color: $POLICIES-BgColor;
+	color: $POLICIES-Color;
+	@include padding($POLICIES-Padding);
+}
+
+
+// Elements
+///////////////////////////
+
+.policies__tick {
+	@include font-size($FontSize-XXXL);
+	line-height: 1;
+	@include margin-right($Type-LineHeight / 4);
+}
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
