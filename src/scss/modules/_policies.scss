@@ -26,7 +26,6 @@ $POLICIES-Padding:	$Type-LineHeight;
 
 .policies__tick {
 	@include font-size($FontSize-XXXL);
-	line-height: 1;
 	@include margin-right($Type-LineHeight / 4);
 }
 
