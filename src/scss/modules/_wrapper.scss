@@ -42,7 +42,7 @@ app-footer {
 @include media($BP-Large) {
 	.w {
 		main {
-			width: 66.66%;
+			flex: 1 0 66.66%;
 		}
 		app-policies {
 			width: 33.33%;

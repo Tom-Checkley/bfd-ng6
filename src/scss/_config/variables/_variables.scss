@@ -47,11 +47,22 @@ $BP-Larger:			1400px;
 $BP-Largest:		1700px;
 
 
+// Height Breakpoints
+///////////////////////////////////////
+
+$Header-Height-Mob:			166px;
+$Header-Height-Tab:			163px;
+$Header-Height-Desk:		153px;
+
+$PAGE-MinHeight-Mob:		calc(100vh - #{$Header-Height-Mob});
+$PAGE-MinHeight-Tab:		calc(100vh - #{$Header-Height-Tab});
+$PAGE-MinHeight-Desk:		calc(100vh - #{$Header-Height-Desk});
+
+
 // Images
 ///////////////////////////////////////
 
 $imgPath:				'./assets/img/';
-
 
 
 // Colors
@@ -69,11 +80,13 @@ $Opacity:						0.8;
 
 $COLOR-BG-Opaque:		rgba($COLOR-Primary, $Opacity);
 
+
 // Borders
 ///////////////////////////////////////
 
 $BORDER:					$COLOR-GreyLight 1px solid;
 $BORDER-Radius:		em($Base-FontSize / 6);
+
 
 // Z-Indexes
 ///////////////////////////////////////

@@ -4,7 +4,6 @@
 // Variables
 ///////////////////////////
 
-$Page-MinHeight:		100vh;
 $Page-Padding:			$Type-LineHeight;
 
 
@@ -12,8 +11,7 @@ $Page-Padding:			$Type-LineHeight;
 ///////////////////////////
 
 .page {
-	// height: 100%;
-	min-height: $Page-MinHeight;
+	min-height: $PAGE-MinHeight-Mob;
 	display: flex;
 	overflow: hidden;
 }
@@ -47,3 +45,15 @@ $Page-Padding:			$Type-LineHeight;
 
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Med) {
+	.page {
+		min-height: $PAGE-MinHeight-Tab;
+	}
+}
+
+@include media($BP-Large) {
+	.page {
+		min-height: $PAGE-MinHeight-Desk;
+	}
+}
