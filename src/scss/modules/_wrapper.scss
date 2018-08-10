@@ -4,6 +4,16 @@
 // Variables
 ///////////////////////////
 
+// Account for fixed heading
+$W-Main-PaddingTop-Mob:		$Header-Height-Mob;
+$W-Main-PaddingTop-Tab:		$Header-Height-Tab;
+$W-Main-PaddingTop-Desk:	$Header-Height-Desk;
+
+// Vars for inner wrapper min height
+$W-Main-MinHeight-Mob:		$PAGE-MinHeight-Mob;
+$W-Main-MinHeight-Tab:		$PAGE-MinHeight-Tab;
+$W-Main-MinHeight-Desk:		$PAGE-MinHeight-Desk;
+$W-Main-MinHeight-LgDesk:	$PAGE-MinHeight-LgDesk;
 
 // Main
 ///////////////////////////
@@ -14,7 +24,6 @@
 	display: flex;
 	flex-wrap: wrap
 }
-
 
 // Elements
 ///////////////////////////
@@ -36,9 +45,23 @@ app-footer {
 // Variants
 ///////////////////////////
 
+.w--main {
+	@include padding-top($W-Main-PaddingTop-Mob);
+	min-height: $W-Main-MinHeight-Mob;
+	align-items: stretch;
+}
+
 
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Med) {
+	.w--main {
+		@include padding-top($W-Main-PaddingTop-Tab);
+		min-height: $W-Main-MinHeight-Tab;
+	}
+}
+
 @include media($BP-Large) {
 	.w {
 		main {
@@ -49,4 +72,13 @@ app-footer {
 			max-width: 490px;
 		}
 	}
+
+	.w--main {
+		@include padding-top($W-Main-PaddingTop-Desk);
+		min-height: $W-Main-MinHeight-Desk;
+	}
+}
+
+@include media($BP-Larger) {
+	min-height: $W-Main-MinHeight-LgDesk;
 }

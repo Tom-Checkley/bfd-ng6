@@ -4,11 +4,11 @@
 // Variables
 ////////////////////////////
 
-$Body-FontSize:			$Base-FontSize;
-$Body-FontFamily:		$FontFamily-Main;
-$Body-LineHeight:		$Type-LineHeight;
-$Body-FontWeight:		$FontWeight-Thin;
-$Body-Color:				$COLOR-White;
+$Body-FontSize:					$Base-FontSize;
+$Body-FontFamily:				$FontFamily-Main;
+$Body-LineHeight:				$Type-LineHeight;
+$Body-FontWeight:				$FontWeight-Thin;
+$Body-Color:						$COLOR-White;
 
 $Heading-Font:			$FontFamily-Head;
 $Heading-Weight:		$FontWeight-Bold;
@@ -27,7 +27,7 @@ html {
 
 body {
 	margin: 0;
-	padding: 0;
+	padding: 0; 
 	font-family: 	$Body-FontFamily;
 	font-weight: 	$Body-FontWeight;
 	@include font-size($Body-FontSize);
@@ -82,3 +82,9 @@ textarea {
 	outline: 1px dotted $COLOR-Primary;
 	outline-offset: 1px;
 }
+
+
+
+// Media Queries
+///////////////////////////
+

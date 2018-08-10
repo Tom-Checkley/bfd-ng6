@@ -16,8 +16,10 @@ $ITEM-HeadingColor:		$COLOR-Secondary;
 // Elements
 ///////////////////////////
 .item__title {
+	@include font-size($FontSize-XXXL);
 	@include margin-y(0, $ITEM-Padding);
 	color: $ITEM-HeadingColor;
+
 }
 
 // Variants

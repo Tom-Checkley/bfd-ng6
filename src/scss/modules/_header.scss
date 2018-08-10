@@ -15,7 +15,10 @@ $HEADER-FontSize-Lg:		$FontSize-XXXL;
 	background-color: $COLOR-Primary;
 	color: $COLOR-Secondary;
 	@include padding($Body-LineHeight);
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	z-index: 1;
 }
 
@@ -31,7 +34,6 @@ $HEADER-FontSize-Lg:		$FontSize-XXXL;
 }
 
 .header__nav {
-	// left: 100%;
 	width: 100%;
 	background-color: $COLOR-Primary;
 	z-index: $Z-Level9;

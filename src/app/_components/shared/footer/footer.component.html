@@ -1,5 +1,13 @@
 <footer class="footer">
   <app-nav class="nav nav--footer"></app-nav>
-  <a [routerLink]="['/login']">Admin Login</a>
-  <button class="button button--primary" (click)="logOut()">Log Out</button>
+  <app-phone-numbers></app-phone-numbers>
 </footer>
+<div class="footer__info">
+  <div class="footer__madeBy">
+    <p>Site made by <a href="http://tomcheckley.co.uk">Tom Checkley Web Development</a> - 2018</p>
+  </div>
+  <div class="footer__admin">
+      <a [routerLink]="['/login']">Admin Login</a>
+      <button class="button button--primary" (click)="logOut()">Log Out</button>
+  </div>
+</div>

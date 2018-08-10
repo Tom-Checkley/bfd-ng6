@@ -23,3 +23,9 @@
 
 // Media Queries
 ///////////////////////////
+
+@include media($BP-Med) {
+	.footer {
+		@include flex(row, space-between, center);
+	}
+}

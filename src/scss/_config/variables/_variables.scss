@@ -51,13 +51,16 @@ $BP-Largest:		1700px;
 ///////////////////////////////////////
 
 $Header-Height-Mob:			166px;
-$Header-Height-Tab:			163px;
-$Header-Height-Desk:		153px;
+$Header-Height-Tab:			173px;
+$Header-Height-Desk:		155px;
+
+$Footer-Height-Mob:			289px;
+$Footer-Height-TabUp:		198px;
 
 $PAGE-MinHeight-Mob:		calc(100vh - #{$Header-Height-Mob});
 $PAGE-MinHeight-Tab:		calc(100vh - #{$Header-Height-Tab});
-$PAGE-MinHeight-Desk:		calc(100vh - #{$Header-Height-Desk});
-
+$PAGE-MinHeight-Desk:		calc(100vh - #{$Header-Height-Desk} + 4px); // Add 4px to account for skewed overlap
+$PAGE-MinHeight-LgDesk:	calc(100vh - (#{$Header-Height-Desk} + #{$Footer-Height-TabUp} + 4px)); // Add 4px to account for skewed overlap
 
 // Images
 ///////////////////////////////////////
