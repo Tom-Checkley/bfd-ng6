@@ -1,0 +1,59 @@
+// TEMPLATE
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$LEAVE-TESTIMONIAL-MinHeight-Mob:		$PAGE-MinHeight-Mob;
+$LEAVE-TESTIMONIAL-MinHeight-Tab:		$PAGE-MinHeight-Tab;
+$LEAVE-TESTIMONIAL-MinHeight-Desk:	$PAGE-MinHeight-Desk;
+
+$LEAVE-TESTIMONIAL-Top-Mob:					$Header-Height-Mob;
+$LEAVE-TESTIMONIAL-Top-Tab:					$Header-Height-Tab;
+$LEAVE-TESTIMONIAL-Top-Desk:				$Header-Height-Desk;
+
+$LEAVE-TESTIMONIAL-BgColor:					$COLOR-Primary;
+
+
+// Main
+///////////////////////////
+
+.testimonial {
+	border: 1px solid $COLOR-Primary;
+	height: 100%;
+	@include padding($Type-LineHeight / 2);
+}
+
+
+// Elements
+///////////////////////////
+
+.testimonial__leaveTestimonial {
+	position: fixed;
+	top: $LEAVE-TESTIMONIAL-Top-Mob;
+	bottom: 0;
+	height: $LEAVE-TESTIMONIAL-MinHeight-Mob;
+	z-index: $Z-Level3;
+	transition: left .4s ease-in-out;
+}
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
+
+@include media($BP-Med) {
+	.testimonial__leave {
+		top: $LEAVE-TESTIMONIAL-Top-Tab;
+		height: $LEAVE-TESTIMONIAL-MinHeight-Tab;
+	}
+}
+
+@include media($BP-Large) {
+	.testimonial__leave {
+		top: $LEAVE-TESTIMONIAL-Top-Desk;
+		height: $LEAVE-TESTIMONIAL-MinHeight-Desk;
+	}
+}

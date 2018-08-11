@@ -30,7 +30,7 @@ $STAR-Bg:			$COLOR-Secondary;
 	background-color: $STAR-Bg;
 }
 .star-rating__star {
-	z-index: 10;
+	z-index: $Z-Level1;
 }
 
 // Variants

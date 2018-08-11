@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SkewedWrapperComponent implements OnInit {
   @Input() full: boolean;
+  @Input() opaque = true;
 
   constructor() { }
 

@@ -16,7 +16,7 @@ $FORM-Spacing:				$Type-LineHeight / 2;
 
 .form {
 	@include padding-y($FORM-PaddingY);
-	@include margin-x($FORM-MarginX-Mob);
+	// @include margin-x($FORM-MarginX-Mob);
 }
 
 // Elements
@@ -44,12 +44,12 @@ $FORM-Spacing:				$Type-LineHeight / 2;
 
 @include media($BP-Med) {
 	.form {
-		@include margin-x($FORM-MarginX-Tab);
+		// @include margin-x($FORM-MarginX-Tab);
 	}
 }
 
 @include media($BP-Large) {
 	.form {
-		@include margin-x($FORM-MarginX-Full);
+		// @include margin-x($FORM-MarginX-Full);
 	}
 }

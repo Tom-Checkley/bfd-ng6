@@ -4,7 +4,10 @@
 // Variables
 ///////////////////////////
 
-$SERVICES-GridHeight:   100vh;
+$LIST-SERVICES-GridHeight:     $PAGE-MinHeight-Desk;
+$LIST-SERVICES-GridHeight-Lg:  $PAGE-MinHeight-LgDesk;
+
+$LIST-TESTIMONIALS-Padding:     $Type-LineHeight / 4;
 
 
 // Main
@@ -51,6 +54,13 @@ $SERVICES-GridHeight:   100vh;
   }
 }
 
+.list--testimonials {
+  .list__item {
+    @include padding($LIST-TESTIMONIALS-Padding);
+  }
+}
+
+
 // Media Queries
 ///////////////////////////
 @include media ($BP-Med) {
@@ -59,10 +69,18 @@ $SERVICES-GridHeight:   100vh;
   }
 
   .list--services {
-    height: $SERVICES-GridHeight;
+    height: $LIST-SERVICES-GridHeight;
     .list__item {
       width: 50%;
       height: 33.33%
+    }
+  }
+
+  .list--testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    .list__item {
+      width: 50%;
     }
   }
 }
@@ -72,6 +90,28 @@ $SERVICES-GridHeight:   100vh;
     .list__item {
       width: 33.33%;
       height: 50%;
+    }
+  }
+
+  .list--testimonials {
+    .list__item {
+      width: 33.33%;
+    }
+  }
+
+}
+
+@include media($BP-Larger) {
+  .list--services {
+    height: auto;
+    min-height: $LIST-SERVICES-GridHeight-Lg;
+  }
+}
+
+@include media($BP-Largest) {
+  .list--testimonials {
+    .list__item {
+      width: 25%;
     }
   }
 }

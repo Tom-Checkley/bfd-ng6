@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.menuState);
     this.screenWidth(event);
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, state, transition, animate } from '@angular/animations';
 // import {  } from 'events';
 
@@ -33,14 +33,14 @@ export class NavComponent implements OnInit {
 
   }
 
-  toggleMenu(menuState) {
+  toggleMenu() {
     if (window.innerWidth <= 1024) {
       this.menuState === 'out'
           ? this.menuState = 'in'
           : this.menuState = 'out';
       this.menuStateChange.emit(this.menuState);
     } else {
-      this.menuState = 'out';
+      this.menuState = 'in';
     }
   }
 
