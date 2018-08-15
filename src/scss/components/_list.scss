@@ -93,18 +93,18 @@ $LIST-TESTIMONIALS-Padding:     $Type-LineHeight / 4;
     }
   }
 
-  .list--testimonials {
-    .list__item {
-      width: 33.33%;
-    }
-  }
-
 }
 
 @include media($BP-Larger) {
   .list--services {
     height: auto;
     min-height: $LIST-SERVICES-GridHeight-Lg;
+  }
+
+  .list--testimonials {
+    .list__item {
+      width: 33.33%;
+    }
   }
 }
 

@@ -14,15 +14,10 @@ $LEAVE-TESTIMONIAL-Top-Desk:				$Header-Height-Desk;
 
 $LEAVE-TESTIMONIAL-BgColor:					$COLOR-Primary;
 
-
 // Main
 ///////////////////////////
 
-.testimonial {
-	border: 1px solid $COLOR-Primary;
-	height: 100%;
-	@include padding($Type-LineHeight / 2);
-}
+
 
 
 // Elements
@@ -45,14 +40,14 @@ $LEAVE-TESTIMONIAL-BgColor:					$COLOR-Primary;
 ///////////////////////////
 
 @include media($BP-Med) {
-	.testimonial__leave {
+	.testimonial__leaveTestimonial {
 		top: $LEAVE-TESTIMONIAL-Top-Tab;
 		height: $LEAVE-TESTIMONIAL-MinHeight-Tab;
 	}
 }
 
 @include media($BP-Large) {
-	.testimonial__leave {
+	.testimonial__leaveTestimonial {
 		top: $LEAVE-TESTIMONIAL-Top-Desk;
 		height: $LEAVE-TESTIMONIAL-MinHeight-Desk;
 	}

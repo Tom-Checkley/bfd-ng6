@@ -87,16 +87,22 @@
 
 @mixin margin-x($l, $r: null) {
 	@if(not $r) {
-		$l: pxOrPercent($l);
-		@if(unitless($l)) {
-			margin-left: #{$l}px;
-			margin-left: em($l);
-			margin-right: #{$l}px;
-			margin-right: em($l);
+		@if($l == 'auto') {
+			margin-right: auto;
+			margin-left: auto;
 		}
 		@else {
-			margin-left: $l;
-			margin-right: $l;
+			$l: pxOrPercent($l);
+			@if(unitless($l)) {
+				margin-left: #{$l}px;
+				margin-left: em($l);
+				margin-right: #{$l}px;
+				margin-right: em($l);
+			}
+			@else {
+				margin-left: $l;
+				margin-right: $l;
+			}
 		}
 	}
 	@if($l and $r) {

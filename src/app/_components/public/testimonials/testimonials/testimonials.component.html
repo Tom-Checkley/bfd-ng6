@@ -1,9 +1,9 @@
-<div class="page">
-  <div>
+<div class="page page--testimonials">
+  <div class="page__content">
     <app-leave-testimonial [(formState)]="formState" (formStateChange)="this.formState = $event"></app-leave-testimonial>
-    <header class="testimonial__header">
+    <header class="page__header page__header--testimonials">
         <h1 class="page__title">Testimonials</h1>
-        <button (click)="toggleForm()" class="button">Leave review</button>
+        <button (click)="toggleForm()" class="button button--inverted">Leave review</button>
     </header>
     <app-display-testimonials></app-display-testimonials>
   </div>

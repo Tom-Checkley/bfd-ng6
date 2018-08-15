@@ -11,6 +11,7 @@ $Page-Padding:			$Type-LineHeight;
 ///////////////////////////
 
 .page {
+	height: 100%;
 	min-height: $PAGE-MinHeight-Mob;
 	display: flex;
 	overflow: hidden;
@@ -23,6 +24,16 @@ $Page-Padding:			$Type-LineHeight;
 .page__content {
 	@include padding($Page-Padding);
 }
+
+.page__header {
+	@include flex($align: center);
+}
+
+.page__title {
+	color: $COLOR-Primary;
+}
+
+
 
 // Variants
 ///////////////////////////
@@ -41,6 +52,17 @@ $Page-Padding:			$Type-LineHeight;
 
 .page--locations {
 	@include bg-img('map.png', fixed);
+}
+
+.page--testimonials {
+	@include bg-img('clearance.jpg', fixed);
+	.page__header {
+		@include padding($Page-Padding / 4);
+	}
+}
+
+.page__header--testimonials {
+	justify-content: space-between;
 }
 
 

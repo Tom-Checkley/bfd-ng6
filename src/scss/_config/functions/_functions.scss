@@ -21,6 +21,9 @@
 
 // PIXEL OR %
 @function pxOrPercent($value) {
+	@if $value == auto {
+		@return auto;
+	}
 	$value: round($value);
 	@if unit($value) == '%' {
 		@return $value;

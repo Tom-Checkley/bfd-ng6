@@ -1,0 +1,73 @@
+// TESTIMONIAL
+///////////////////////////
+
+// Variables
+///////////////////////////
+
+$TESTIMONIAL-BgColor:					rgba($COLOR-White, $Opacity);
+$TESTIMONIAL-Padding:					$Type-LineHeight / 2;
+$TESTIMONIAL-Header-Color:		$COLOR-Secondary;
+$TESTIMONIAL-Header-BgColor:	$COLOR-Primary;
+
+
+// Main
+///////////////////////////
+
+.testimonial {
+	border: 1px solid $COLOR-Primary;
+	height: 100%;
+	background-color: $TESTIMONIAL-BgColor;
+}
+
+
+// Elements
+///////////////////////////
+
+.testimonial__head,
+.testimonial__body {
+	@include padding($TESTIMONIAL-Padding);
+}
+
+.testimonial__head {
+	background-color: $TESTIMONIAL-Header-BgColor;
+	color: $TESTIMONIAL-Header-Color;
+}
+
+.testimonial__body {
+	@include padding-y($TESTIMONIAL-Padding * 2);
+}
+
+.testimonial__author {
+	@include margin-y(0);
+}
+
+.testimonial__location {
+	@include margin-y(0);
+}
+
+.testimonial__meta {
+	p {
+		@include margin-y(0);
+	}
+	small {
+		@include font-size($FontSize);
+	}
+}
+
+.testimonial__text {
+	@include font-size($FontSize-XL);
+	// @include margin-top(0);
+}
+
+// .testimonial__stars {
+// 	display: flex;
+// 	justify-content: center;
+// }
+
+
+// Variants
+///////////////////////////
+
+
+// Media Queries
+///////////////////////////
